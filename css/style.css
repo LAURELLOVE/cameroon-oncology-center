@@ -323,12 +323,14 @@ h1, h2, h3, h4 {
 .search-overlay.open .search-box { transform: translateY(0); }
 .search-box input {
   flex: 1;
+  min-width: 0;
   border: none;
   outline: none;
   font-size: 1.05rem;
   padding: 12px 16px;
   font-family: inherit;
 }
+.search-box button.go, .search-box button.close-search { flex-shrink: 0; }
 .search-box button.go { background: var(--navy); color: var(--white); border-radius: var(--radius-sm); padding: 0 20px; font-weight: 600; }
 .search-box button.close-search { color: var(--gray-600); padding: 0 12px; font-size: 1.3rem; }
 .search-hint { color: var(--gray-200); text-align: center; margin-top: 14px; font-size: 0.85rem; }
@@ -877,6 +879,61 @@ h1, h2, h3, h4 {
   .section-title { font-size: 1.5rem; }
   .hero h1 { font-size: 1.8rem; }
   .page-banner h1 { font-size: 1.7rem; }
+}
+
+/* ============ Phone (Android / small screens) ============ */
+@media (max-width: 480px) {
+  .container { padding: 0 16px; }
+  /* The full-text "Book an Appointment" button no longer fits next to the
+     brand and the burger on a phone-width screen; the same link is still
+     reachable via the burger menu (For Patients > Book an Appointment,
+     and Contact Us), so just drop it here instead of truncating it. */
+  .nav-cta > a.btn { display: none; }
+  .navbar .container { gap: 10px; }
+  .brand-mark { width: 42px; height: 42px; }
+  .brand-text .brand-name { font-size: 0.88rem; }
+  .brand-text .brand-tag { font-size: 0.62rem; letter-spacing: 1px; }
+
+  .topbar .container { flex-wrap: wrap; gap: 6px; row-gap: 4px; }
+  .topbar .topbar-group { font-size: 0.72rem; }
+
+  .hero { padding: 32px 0; }
+  .hero h1 { font-size: 1.6rem; }
+  .hero .sub, .hero-sub { font-size: 1rem; }
+  .hero-buttons, .btn-row { flex-direction: column; align-items: stretch; }
+  .hero-buttons .btn, .btn-row .btn { width: 100%; justify-content: center; }
+
+  /* !important is required here: many pages set a custom multi-column
+     layout via an inline style="grid-template-columns:..." (e.g. "1.5fr 1fr"
+     or "repeat(5,1fr)"), which otherwise outranks this stylesheet rule and
+     keeps forcing several narrow columns on a phone screen. */
+  .stats-grid, .card-grid, .card-grid.cols-6, .card-grid.cols-3, .card-grid.cols-4,
+  .milestone-grid, .gallery-strip, .why-grid, .flyer-grid3,
+  .care-grid, .action-grid { grid-template-columns: 1fr !important; }
+  /* Small round avatar tiles stay 2-up rather than 1-up — full-width would
+     blow each circular photo up to ~340px. */
+  .mini-team-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .checklist, .bring-list { column-count: 1 !important; }
+
+  .section { padding: 40px 0; }
+  .section-title { font-size: 1.35rem; }
+  .page-banner { padding: 50px 0; }
+  .page-banner h1 { font-size: 1.4rem; }
+
+  .flyer-panel-body .team-row { flex-direction: column; align-items: flex-start; }
+  .pathway-row, .pathway { flex-direction: column; align-items: stretch; }
+  .pathway-arrow { transform: rotate(90deg); margin: 4px auto; }
+
+  .cta-banner .container, .contact-cta .container { flex-direction: column; align-items: flex-start; text-align: left; }
+  .contact-info-row { flex-direction: column; align-items: flex-start; gap: 10px; }
+
+  table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+  .footer-social { flex-wrap: wrap; }
+
+  .search-box { padding: 6px; gap: 4px; }
+  .search-box input { font-size: 0.92rem; padding: 10px 8px; }
+  .search-box button.go { padding: 0 12px; font-size: 0.88rem; }
 }
 
 /* ==========================================================================
