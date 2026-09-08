@@ -141,7 +141,8 @@ const translations = {
       video: {
         label: "Our Story",
         title: "Watch Our Theme Song",
-        sub: "A message of hope, care and life from the Cameroon Oncology Center family."
+        sub: "A message of hope, care and life from the Cameroon Oncology Center family.",
+        fb_link: "Watch on Facebook"
       },
       footer_tagline: "A Healthier Cameroon. A Brighter Tomorrow."
     },
@@ -1537,7 +1538,8 @@ const translations = {
       video: {
         label: "Notre Histoire",
         title: "Regardez Notre Chanson Thème",
-        sub: "Un message d'espoir, de soin et de vie de la part de la famille du Cameroon Oncology Center."
+        sub: "Un message d'espoir, de soin et de vie de la part de la famille du Cameroon Oncology Center.",
+        fb_link: "Regarder sur Facebook"
       },
       footer_tagline: "Un Cameroun en Meilleure Santé. Un Avenir Plus Radieux."
     },

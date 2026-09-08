@@ -4,6 +4,11 @@
    scroll reveal, and active-link highlighting.
    ========================================================================== */
 
+/* Captured while this script is still the "current" one executing (only
+   true synchronously at load time) so relative navigation below works the
+   same from root pages and from one-level-deep pages like team/*.html. */
+const sitePrefix = (document.currentScript?.getAttribute('src') || 'js/main.js').replace(/js\/main\.js.*$/, '');
+
 document.addEventListener('DOMContentLoaded', () => {
 
   /* ---------- Mobile nav toggle ---------- */
@@ -79,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
       appointment: 'appointment.html', book: 'appointment.html', contact: 'appointment.html'
     };
     const key = Object.keys(map).find((k) => term.toLowerCase().includes(k));
-    window.location.href = key ? map[key] : `about.html?q=${encodeURIComponent(term)}`;
+    window.location.href = sitePrefix + (key ? map[key] : `about.html?q=${encodeURIComponent(term)}`);
   }
 
   /* ---------- Language toggle ---------- */

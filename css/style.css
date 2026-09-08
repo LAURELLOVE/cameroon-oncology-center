@@ -9,8 +9,9 @@
   --navy-light: #1e50c8;
   --red: #e2231a;
   --red-dark: #b81810;
-  --gold: #d4a017;
-  --gold-dark: #b8860b;
+  /* Metallic Yellow accent (replaces the earlier goldenrod tone) */
+  --gold: #d4af37;
+  --gold-dark: #a8842c;
   --purple: #7b2d8e;
   --purple-dark: #5e2170;
   --blue-pale: #eaf4fb;
@@ -604,7 +605,10 @@ h1, h2, h3, h4 {
 .leader-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
 .leader-photo {
   position: relative; overflow: hidden;
-  height: 150px;
+  /* A fixed height cropped worse and worse as the card got wider (worst on
+     a full-width phone card). An aspect-ratio keeps the crop proportional
+     — and mild, since these are near-square headshots — at every width. */
+  aspect-ratio: 1 / 1;
   background: linear-gradient(135deg, var(--navy), var(--navy-light));
   color: var(--white);
   display: grid; place-items: center;
@@ -614,10 +618,20 @@ h1, h2, h3, h4 {
    markup) paints over the initials/gradient placeholder; if the file is
    missing, removing it on error reveals the initials underneath instead
    of a broken-image icon. */
+/* This particular headshot is a tall portrait; cover-cropping it inside the
+   short wide tile clips the top of the head or the chin depending on card
+   width. Show the whole photo uncropped instead, letterboxed on the
+   existing navy gradient background. */
+img[src*="mosse-bassane"] { object-fit: contain !important; }
+
 .leader-photo img, .mini-team-photo img, .doctor-avatar img, .partner-avatar img, .team-mini .circle img {
   position: absolute; inset: 0;
   width: 100%; height: 100%;
   object-fit: cover;
+  /* Bias the crop toward the upper part of the frame — these are headshots,
+     so keeping a little extra above center keeps the whole face in view
+     instead of centering on the chin/collar. */
+  object-position: center 20%;
   border-radius: inherit;
 }
 .leader-body { padding: 16px 18px 20px; }
@@ -625,6 +639,19 @@ h1, h2, h3, h4 {
 .leader-body .role { color: var(--red); font-weight: 600; font-size: 0.82rem; margin: 4px 0 10px; }
 .leader-body p { font-size: 0.82rem; color: var(--gray-600); margin-bottom: 12px; }
 .leader-body a { font-size: 0.82rem; font-weight: 700; color: var(--navy); }
+
+/* ============ Individual team profile pages (team/*.html) ============ */
+.profile-photo {
+  position: relative; overflow: hidden;
+  aspect-ratio: 4 / 5;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, var(--navy), var(--navy-light));
+  display: grid; place-items: center;
+  box-shadow: var(--shadow-lg);
+}
+.profile-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+.profile-photo i { display: none; }
+.profile-photo-initials { color: var(--white); font-weight: 700; font-size: 2.4rem; }
 
 .quote-banner {
   background: var(--blue-pale);
@@ -1163,7 +1190,7 @@ h1, h2, h3, h4 {
   box-shadow: var(--shadow-lg);
   background: #000;
 }
-.video-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.video-embed iframe, .video-embed video { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; object-fit: cover; background: #000; }
 
 .footer-social a.tiktok:hover { background: #000; color: var(--white); }
 .footer-social a.facebook:hover { background: #1877F2; color: var(--white); }
