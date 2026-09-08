@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oncology Nurse Navigation | Cameroon Oncology Center</title>
+<meta name="description" content="No patient navigates cancer care alone — the Universal Closed-Loop Oncology Nurse Navigation Program at Cameroon Oncology Center.">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="container">
+    <div class="topbar-group">
+      <a class="topbar-item" href="tel:+237652269648"><i class="fa-solid fa-phone"></i> +237 6 52 26 96 48</a>
+      <a class="topbar-item" href="mailto:info@camoncenter.org"><i class="fa-solid fa-envelope"></i> info@camoncenter.org</a>
+      <span class="topbar-item"><i class="fa-solid fa-location-dot"></i> <span data-i18n="common.topbar.address">Bekoko - Dibombari, Littoral Region, Cameroon</span></span>
+    </div>
+    <div class="topbar-group">
+      <span class="topbar-item"><i class="fa-solid fa-clock"></i> <strong data-i18n="common.topbar.hours">Open 24 Hours</strong>&nbsp;· <span data-i18n="common.topbar.days">7 Days a Week</span></span>
+      <div class="lang-switch"><button data-lang="en" class="active">EN</button>|<button data-lang="fr">FR</button></div>
+      <button class="topbar-search-btn" data-open-search data-i18n-title="common.topbar.search_title" title="Search site"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </div>
+  </div>
+</div>
+
+<header class="navbar">
+  <div class="container">
+    <a href="index.html" class="brand">
+      <div class="brand-mark"><img src="images/logo/coc-logo.png" alt="Cameroon Oncology Center logo" onerror="this.remove()"><span></span><span></span><span></span><span></span></div>
+      <span class="brand-text">
+        <span class="brand-name">CAMEROON<br>ONCOLOGY <em>CENTER</em></span>
+        <span class="brand-tag" data-i18n="common.brand.tagline">Hope · Care · Life</span>
+      </span>
+    </a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html" data-i18n="common.nav.home">Home</a></li>
+        <li class="has-dropdown">
+          <button class="nav-toggle"><span data-i18n="common.nav.about">About Us</span> <i class="fa-solid fa-chevron-down chev"></i></button>
+          <div class="dropdown">
+            <a href="about.html" data-i18n="common.nav.about_glance">COC at a Glance</a>
+            <a href="about.html#leadership" data-i18n="common.nav.about_leadership">Our Leadership</a>
+          </div>
+        </li>
+        <li class="has-dropdown">
+          <button class="nav-toggle"><span data-i18n="common.nav.services">Our Services</span> <i class="fa-solid fa-chevron-down chev"></i></button>
+          <div class="dropdown">
+            <a href="radiation-oncology.html" data-i18n="common.nav.services_radiation">Radiation Oncology</a>
+            <a href="medical-oncology.html" data-i18n="common.nav.services_medical">Medical Oncology</a>
+            <a href="surgical-oncology.html" data-i18n="common.nav.services_surgical">Surgical Oncology</a>
+            <a href="histopathology.html" data-i18n="common.nav.services_lab">Laboratory &amp; Pathology</a>
+            <a href="radiology-imaging.html" data-i18n="common.nav.services_imaging">Imaging &amp; Nuclear Medicine</a>
+            <a href="cardiology.html">Cardiology &amp; Cardio-Oncology</a>
+            <a href="urology.html">Urology &amp; Urologic Oncology</a>
+            <a href="gynecology.html">Gynecologic Oncology</a>
+            <a href="nutrition-dietetics.html">Nutrition &amp; Dietetics</a>
+            <a href="psycho-oncology.html">Psychology &amp; Psycho-Oncology</a>
+            <a href="head-neck-thyroid.html">Head &amp; Neck / Thyroid Cancer</a>
+          </div>
+        </li>
+        <li class="has-dropdown">
+          <button class="nav-toggle"><span data-i18n="common.nav.patients">For Patients</span> <i class="fa-solid fa-chevron-down chev"></i></button>
+          <div class="dropdown">
+            <a href="patients-families.html" data-i18n="common.nav.patients_support">Patient Support</a>
+            <a href="nurse-navigation.html" class="router-active">Nurse Navigation</a>
+            <a href="appointment.html" data-i18n="common.nav.patients_book">Book an Appointment</a>
+            <a href="urgent-care.html">Urgent Care</a>
+            <a href="directions.html">Directions</a>
+          </div>
+        </li>
+        <li><a href="research-training.html" data-i18n="common.nav.research">Research</a></li>
+        <li><a href="affiliate-physician-network.html">Affiliate Network</a></li>
+        <li><a href="appointment.html" data-i18n="common.nav.contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-cta">
+      <a href="appointment.html" class="btn btn-primary btn-sm" data-i18n="common.buttons.book_appointment">Book an Appointment</a>
+      <button class="nav-burger" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="flyer-banner" data-i18n="histo.banner">A Ministry of Public Health Designated Centre of Excellence in Cancer Care</div>
+
+<!-- ============ Hero ============ -->
+<section class="flyer-hero">
+  <div class="container flyer-hero-grid">
+    <div class="reveal">
+      <h1 data-i18n="nursenav.banner.title">Oncology Nurse Navigation</h1>
+      <p class="tag" data-i18n="nursenav.banner.subtitle">No Patient Navigates Cancer Care Alone.</p>
+      <p class="desc" data-i18n="nursenav.banner.desc">At Cameroon Oncology Center, every oncology patient is supported by a dedicated oncology nurse navigator from the first point of contact through all stages of care. Our Universal Closed-Loop Oncology Nurse Navigation Program ensures that each patient receives personalized guidance, education, coordination and ongoing support.</p>
+      <div class="icon-row">
+        <div class="item"><div class="circle"><i class="fa-solid fa-heart-circle-check"></i></div><span data-i18n="nursenav.icons.assess">Assess</span><span style="display:block;font-size:0.62rem;color:var(--gray-600);" data-i18n="nursenav.icons.assess_d">Identify needs and barriers</span></div>
+        <div class="item"><div class="circle"><i class="fa-solid fa-book-open"></i></div><span data-i18n="nursenav.icons.educate">Educate</span><span style="display:block;font-size:0.62rem;color:var(--gray-600);" data-i18n="nursenav.icons.educate_d">Provide clear information</span></div>
+        <div class="item"><div class="circle"><i class="fa-solid fa-people-arrows"></i></div><span data-i18n="nursenav.icons.coordinate">Coordinate</span><span style="display:block;font-size:0.62rem;color:var(--gray-600);" data-i18n="nursenav.icons.coordinate_d">Connect with the right services</span></div>
+        <div class="item"><div class="circle"><i class="fa-solid fa-hand-fist"></i></div><span data-i18n="nursenav.icons.advocate">Advocate</span><span style="display:block;font-size:0.62rem;color:var(--gray-600);" data-i18n="nursenav.icons.advocate_d">Support your care journey</span></div>
+        <div class="item"><div class="circle"><i class="fa-solid fa-calendar-check"></i></div><span data-i18n="nursenav.icons.followup">Follow Up</span><span style="display:block;font-size:0.62rem;color:var(--gray-600);" data-i18n="nursenav.icons.followup_d">Stay with you long term</span></div>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="ph" style="min-height:220px;">
+        <i class="fa-solid fa-user-nurse"></i>
+        <span class="ph-label">Photo placeholder — nurse navigator with patient (images/nursenav-hero.jpg)</span>
+      </div>
+      <p class="hero-italic" style="text-align:right;margin-top:14px;" data-i18n="nursenav.banner.quote">"Guiding You at Every Step of Your Cancer Journey."</p>
+    </div>
+  </div>
+</section>
+
+<div class="strip-band" style="background:var(--red);">
+  <span data-i18n="nursenav.strip">Every Cancer. Every Stage. Every Patient.</span>
+  <div style="font-size:0.75rem;font-weight:400;margin-top:2px;" data-i18n="nursenav.strip_sub">Diagnosis | Treatment | Survivorship | Recurrence | Palliative Care</div>
+</div>
+
+<!-- ============ Pathway (6-step) ============ -->
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <h2 class="section-title" data-i18n="nursenav.pathway.head">The COC Closed-Loop Oncology Nurse Navigation Pathway</h2>
+        <p class="section-sub" style="font-style:italic;" data-i18n="nursenav.pathway.subtitle">A Continuous, Patient-Centered Navigation Cycle</p>
+      </div>
+    </div>
+    <div class="flyer-grid3 reveal" style="grid-template-columns:repeat(3,1fr);">
+      <div class="flyer-panel"><div class="flyer-panel-head" style="background:var(--navy);">1 · <span data-i18n="nursenav.pathway.p1_t">Registration</span></div><div class="flyer-panel-body"><ul><li data-i18n="nursenav.pathway.p1a">Patient arrives at COC (from any source)</li><li data-i18n="nursenav.pathway.p1b">Registration and medical record creation</li><li data-i18n="nursenav.pathway.p1c">Initial orientation to services</li></ul></div></div>
+      <div class="flyer-panel"><div class="flyer-panel-head" style="background:#2e9e5b;">2 · <span data-i18n="nursenav.pathway.p2_t">Entry Navigation (Before Consultation)</span></div><div class="flyer-panel-body"><ul><li data-i18n="nursenav.pathway.p2a">Warm welcome and comprehensive assessment</li><li data-i18n="nursenav.pathway.p2b">Review of medical records and previous investigations</li><li data-i18n="nursenav.pathway.p2c">Identify clinical and non-clinical barriers (financial, transportation, psychosocial, etc.)</li><li data-i18n="nursenav.pathway.p2d">Organize laboratory, imaging and other tests</li><li data-i18n="nursenav.pathway.p2e">Prepare patient for specialist consultation</li></ul></div></div>
+      <div class="flyer-panel"><div class="flyer-panel-head" style="background:var(--red);">3 · <span data-i18n="nursenav.pathway.p3_t">Specialist Consultation</span></div><div class="flyer-panel-body"><ul><li data-i18n="nursenav.pathway.p3a">Consultation with the appropriate specialist(s) (Medical Oncology, Radiation Oncology, Surgery, Gynecology, etc.)</li><li data-i18n="nursenav.pathway.p3b">Diagnosis and staging</li><li data-i18n="nursenav.pathway.p3c">Discussion of treatment options</li><li data-i18n="nursenav.pathway.p3d">Development of individualized care plan</li></ul></div></div>
+      <div class="flyer-panel"><div class="flyer-panel-head" style="background:var(--purple);">4 · <span data-i18n="nursenav.pathway.p4_t">Exit Navigation (After Consultation)</span></div><div class="flyer-panel-body"><ul><li data-i18n="nursenav.pathway.p4a">Review and explain treatment plan</li><li data-i18n="nursenav.pathway.p4b">Teach-back to confirm understanding</li><li data-i18n="nursenav.pathway.p4c">Arrange appointments and referrals</li><li data-i18n="nursenav.pathway.p4d">Coordinate additional tests</li><li data-i18n="nursenav.pathway.p4e">Address patient questions and concerns</li><li data-i18n="nursenav.pathway.p4f">Provide emotional support</li></ul></div></div>
+      <div class="flyer-panel"><div class="flyer-panel-head" style="background:var(--gold-dark);">5 · <span data-i18n="nursenav.pathway.p5_t">Treatment Coordination</span></div><div class="flyer-panel-body"><ul><li data-i18n="nursenav.pathway.p5a">Coordinate start of treatment (chemotherapy, radiotherapy, surgery, etc.)</li><li data-i18n="nursenav.pathway.p5b">Liaise with pharmacy, laboratory, imaging and other services</li><li data-i18n="nursenav.pathway.p5c">Monitor treatment schedule</li><li data-i18n="nursenav.pathway.p5d">Manage side effects and complications</li><li data-i18n="nursenav.pathway.p5e">Ensure access to supportive care (nutrition, psychology, cardiology, palliative care, etc.)</li></ul></div></div>
+      <div class="flyer-panel"><div class="flyer-panel-head" style="background:#1c7c43;">6 · <span data-i18n="nursenav.pathway.p6_t">Longitudinal Follow-up (Continuous Navigation)</span></div><div class="flyer-panel-body"><ul><li data-i18n="nursenav.pathway.p6a">Regular contact (calls, visits, WhatsApp)</li><li data-i18n="nursenav.pathway.p6b">Monitor symptoms and side effects</li><li data-i18n="nursenav.pathway.p6c">Ensure adherence to treatment</li><li data-i18n="nursenav.pathway.p6d">Assist with survivorship care planning</li><li data-i18n="nursenav.pathway.p6e">Support during recurrence or palliation</li><li data-i18n="nursenav.pathway.p6f">Link to community resources as needed</li></ul></div></div>
+    </div>
+    <p class="reveal" style="text-align:center;font-style:italic;font-weight:700;color:var(--navy-dark);margin-top:18px;" data-i18n="nursenav.note">The navigator remains connected to the patient throughout the entire cancer journey.</p>
+  </div>
+</section>
+
+<!-- ============ Before you leave / What navigator does ============ -->
+<section class="section bg-pale">
+  <div class="container card-grid reveal" style="grid-template-columns:1fr 1.3fr;">
+    <div class="highlight-box">
+      <h4><i class="fa-solid fa-door-open"></i> <span data-i18n="nursenav.before_leave.head">Before You Leave COC</span></h4>
+      <p style="font-weight:700;color:var(--gold);margin-bottom:8px;" data-i18n="nursenav.before_leave.desc">See Your Nurse Navigator Again</p>
+      <p style="margin-bottom:0;" data-i18n="nursenav.before_leave.note">Every oncology patient returns to the nurse navigator after the specialist consultation. The navigator reviews the recommendations, confirms understanding, arranges appointments and referrals, and addresses any remaining barriers before you leave.</p>
+    </div>
+    <div class="info-panel">
+      <h3 data-i18n="nursenav.what_does.head">What Your Oncology Nurse Navigator Does</h3>
+      <ul class="checklist" style="margin-top:8px;">
+        <li data-i18n="nursenav.what_does.w1">Comprehensive patient assessment</li>
+        <li data-i18n="nursenav.what_does.w2">Review and organize medical records</li>
+        <li data-i18n="nursenav.what_does.w3">Coordinate investigations and appointments</li>
+        <li data-i18n="nursenav.what_does.w4">Provide education and emotional support</li>
+        <li data-i18n="nursenav.what_does.w5">Identify and help overcome barriers to care (financial, transportation, language, etc.)</li>
+        <li data-i18n="nursenav.what_does.w6">Work closely with the multidisciplinary team</li>
+        <li data-i18n="nursenav.what_does.w7">Ensure continuous follow-up</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Integrated / Team ============ -->
+<section class="section">
+  <div class="container">
+    <h3 class="reveal" style="margin-bottom:14px;" data-i18n="nursenav.integrated.head">Integrated with All COC Services</h3>
+    <div class="icon-row reveal">
+      <div class="item"><div class="circle"><i class="fa-solid fa-syringe"></i></div><span data-i18n="nursenav.integrated.i1">Medical Oncology</span></div>
+      <div class="item"><div class="circle"><i class="fa-solid fa-radiation"></i></div><span data-i18n="nursenav.integrated.i2">Radiation Oncology</span></div>
+      <div class="item"><div class="circle"><i class="fa-solid fa-user-doctor"></i></div><span data-i18n="nursenav.integrated.i3">Surgery</span></div>
+      <div class="item"><div class="circle"><i class="fa-solid fa-flask"></i></div><span data-i18n="nursenav.integrated.i4">Laboratory</span></div>
+      <div class="item"><div class="circle"><i class="fa-solid fa-x-ray"></i></div><span data-i18n="nursenav.integrated.i5">Imaging (CT, MRI, Ultrasound)</span></div>
+      <div class="item"><div class="circle"><i class="fa-solid fa-pills"></i></div><span data-i18n="nursenav.integrated.i6">Pharmacy</span></div>
+      <div class="item"><div class="circle"><i class="fa-solid fa-apple-whole"></i></div><span data-i18n="nursenav.integrated.i7">Nutrition Support</span></div>
+      <div class="item"><div class="circle"><i class="fa-solid fa-comments"></i></div><span data-i18n="nursenav.integrated.i8">Psycho-Oncology &amp; Social Support</span></div>
+      <div class="item"><div class="circle"><i class="fa-solid fa-heart-pulse"></i></div><span data-i18n="nursenav.integrated.i9">Cardiology</span></div>
+      <div class="item"><div class="circle"><i class="fa-solid fa-hand-holding-heart"></i></div><span data-i18n="nursenav.integrated.i10">Palliative Care</span></div>
+      <div class="item"><div class="circle"><i class="fa-solid fa-bed-pulse"></i></div><span data-i18n="nursenav.integrated.i11">Inpatient Care</span></div>
+      <div class="item"><div class="circle"><i class="fa-solid fa-people-roof"></i></div><span data-i18n="nursenav.integrated.i12">Community Resources</span></div>
+    </div>
+    <div class="quote-card reveal" style="margin-top:24px;text-align:center;">
+      <h4 style="font-size:0.95rem;color:var(--navy-dark);margin-bottom:8px;" data-i18n="nursenav.team.head">A Dedicated Navigation Team</h4>
+      <p data-i18n="nursenav.team.desc" style="font-style:normal;">Our program started with one nurse navigator and expanded to two dedicated oncology nurse navigators to meet the growing needs of our patients.</p>
+      <cite data-i18n="nursenav.team.quote" style="margin-top:8px;">"We walk this journey with you."</cite>
+    </div>
+  </div>
+</section>
+
+<div class="split-banner">
+  <div class="ph tone-light"><i class="fa-solid fa-mountain-sun"></i><span class="ph-label">Photo placeholder — landscape banner (images/nursenav-footer.jpg)</span></div>
+  <div class="split-banner-text">
+    <p data-i18n="research.strip1">Care Today. Hope Tomorrow.</p>
+    <p data-i18n="research.strip2_l">For a Healthier Cameroon.</p>
+  </div>
+</div>
+
+<!-- ============ Footer ============ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <a href="index.html" class="footer-brand">
+        <div class="brand-mark"><img src="images/logo/coc-logo.png" alt="Cameroon Oncology Center logo" onerror="this.remove()"><span></span><span></span><span></span><span></span></div>
+        <span class="brand-text">
+          <span class="brand-name" style="color:var(--white)">CAMEROON<br>ONCOLOGY CENTER</span>
+          <span class="brand-tag" style="color:var(--gray-400)" data-i18n="common.brand.tagline">Hope · Care · Life</span>
+        </span>
+      </a>
+      <div class="footer-links">
+        <a href="about.html" data-i18n="common.footer.about">About Us</a>
+        <a href="patients-families.html" data-i18n="common.footer.patients">Patients &amp; Families</a>
+        <a href="affiliate-physician-network.html">Affiliate Network</a>
+        <a href="appointment.html" data-i18n="common.footer.book">Book an Appointment</a>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/share/v/1BkWf5XxgD/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook" class="facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://vm.tiktok.com/ZSV1YSd8H/" target="_blank" rel="noopener" aria-label="TikTok" class="tiktok"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+    </div>
+    <p class="footer-tagline" data-i18n="research.strip1">Care Today. Hope Tomorrow.</p>
+    <div class="footer-bottom">
+      <span>&copy; <span data-year></span> <span data-i18n="common.footer.copyright_suffix">Cameroon Oncology Center. All rights reserved.</span></span>
+      <span><a href="#" data-i18n="common.footer.privacy">Privacy Policy</a> &nbsp;|&nbsp; <a href="#" data-i18n="common.footer.terms">Terms of Use</a> &nbsp;|&nbsp; <a href="#" data-i18n="common.footer.sitemap">Site Map</a></span>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+<div class="search-overlay">
+  <div>
+    <div class="search-box">
+      <input type="text" data-i18n-placeholder="common.search.placeholder" placeholder="Search services, leadership, pages...">
+      <button class="go" data-i18n="common.search.button">Search</button>
+      <button class="close-search">&times;</button>
+    </div>
+    <p class="search-hint" data-i18n="common.search.hint">Press Esc to close</p>
+  </div>
+</div>
+
+<script src="js/i18n.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

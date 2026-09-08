@@ -3,11 +3,12 @@
    ========================================================================== */
 
 :root {
-  --navy-dark: #0a2c4d;
-  --navy: #0d3b66;
-  --navy-light: #12508f;
-  --red: #c0392b;
-  --red-dark: #9c2a1f;
+  /* Blue/red tuned to match the COC logo mark (images/logo/coc-logo.*) */
+  --navy-dark: #0b2a6b;
+  --navy: #14349c;
+  --navy-light: #1e50c8;
+  --red: #e2231a;
+  --red-dark: #b81810;
   --gold: #d4a017;
   --gold-dark: #b8860b;
   --purple: #7b2d8e;
@@ -30,7 +31,7 @@
   --font-head: 'Poppins', 'Segoe UI', sans-serif;
   --font-body: 'Inter', 'Segoe UI', sans-serif;
 
-  --container: 1180px;
+  --container: 1280px;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -170,6 +171,7 @@ h1, h2, h3, h4 {
 }
 .brand { display: flex; align-items: center; gap: 12px; }
 .brand-mark {
+  position: relative;
   width: 52px; height: 52px;
   border-radius: 10px;
   background: var(--navy);
@@ -179,10 +181,21 @@ h1, h2, h3, h4 {
   gap: 3px;
   padding: 6px;
   flex-shrink: 0;
+  overflow: hidden;
 }
 .brand-mark span { border-radius: 3px; }
 .brand-mark span:nth-child(1), .brand-mark span:nth-child(4) { background: var(--white); }
 .brand-mark span:nth-child(2), .brand-mark span:nth-child(3) { background: var(--red); }
+/* The real logo file (once added under images/logo/) paints over the CSS
+   squares above; if it 404s, its onerror="this.remove()" reveals the
+   squares underneath as a same-shape fallback. */
+.brand-mark img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: contain;
+  background: var(--white);
+  border-radius: 10px;
+}
 .brand-text { line-height: 1.15; }
 .brand-text .brand-name {
   font-family: var(--font-head);
@@ -200,18 +213,21 @@ h1, h2, h3, h4 {
   text-transform: uppercase;
 }
 
-.nav-links { display: flex; align-items: center; gap: 6px; }
+.nav-links { display: flex; align-items: center; gap: 2px; flex-wrap: nowrap; white-space: nowrap; }
 .nav-links > li { position: relative; }
 .nav-links > li > a, .nav-links > li > button.nav-toggle {
   display: flex;
   align-items: center;
-  gap: 6px;
-  padding: 12px 14px;
+  gap: 5px;
+  padding: 11px 10px;
+  font-family: var(--font-head);
   font-weight: 600;
+  letter-spacing: 0.2px;
   color: var(--gray-800);
-  font-size: 0.94rem;
+  font-size: 0.86rem;
   border-radius: var(--radius-sm);
   transition: color 0.15s, background 0.15s;
+  white-space: nowrap;
 }
 .nav-links > li > a:hover,
 .nav-links > li > button.nav-toggle:hover,
@@ -353,6 +369,15 @@ h1, h2, h3, h4 {
   text-align: center;
   min-height: 160px;
 }
+/* Real photo (e.g. the COC building) painted over a .ph placeholder.
+   Positioned elements stack above the static icon/label by default, so
+   this covers them when loaded; onerror="this.remove()" in the markup
+   reveals the icon/label placeholder again if the file is missing. */
+.ph img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
 .ph::before {
   content: '';
   position: absolute; inset: 0;
@@ -447,6 +472,7 @@ h1, h2, h3, h4 {
 .partners-row { display: flex; gap: 18px; margin-top: 10px; }
 .partner-mini { display: flex; align-items: center; gap: 12px; }
 .partner-avatar {
+  position: relative; overflow: hidden;
   width: 54px; height: 54px; border-radius: 50%;
   background: linear-gradient(135deg, var(--navy), var(--navy-light));
   color: var(--white); display: grid; place-items: center; font-weight: 700; flex-shrink: 0;
@@ -575,11 +601,22 @@ h1, h2, h3, h4 {
 }
 .leader-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
 .leader-photo {
+  position: relative; overflow: hidden;
   height: 150px;
   background: linear-gradient(135deg, var(--navy), var(--navy-light));
   color: var(--white);
   display: grid; place-items: center;
   font-size: 2rem; font-weight: 700;
+}
+/* Shared real-photo pattern: the <img> (with onerror="this.remove()" in
+   markup) paints over the initials/gradient placeholder; if the file is
+   missing, removing it on error reveals the initials underneath instead
+   of a broken-image icon. */
+.leader-photo img, .mini-team-photo img, .doctor-avatar img, .partner-avatar img, .team-mini .circle img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
 }
 .leader-body { padding: 16px 18px 20px; }
 .leader-body h4 { font-size: 0.98rem; color: var(--navy-dark); }
@@ -639,6 +676,7 @@ h1, h2, h3, h4 {
   margin-top: 24px;
 }
 .doctor-avatar {
+  position: relative; overflow: hidden;
   width: 64px; height: 64px; border-radius: 50%;
   background: linear-gradient(135deg, var(--navy), var(--navy-light));
   color: var(--white); display: grid; place-items: center; font-weight: 700; font-size: 1.3rem; flex-shrink: 0;
@@ -711,7 +749,7 @@ h1, h2, h3, h4 {
 
 .team-row { display: flex; gap: 26px; flex-wrap: wrap; }
 .team-mini { text-align: center; width: 100px; }
-.team-mini .circle { width: 60px; height: 60px; border-radius: 50%; background: var(--gray-100); color: var(--navy); display: grid; place-items: center; margin: 0 auto 8px; font-size: 1.3rem; }
+.team-mini .circle { position: relative; overflow: hidden; width: 60px; height: 60px; border-radius: 50%; background: var(--gray-100); color: var(--navy); display: grid; place-items: center; margin: 0 auto 8px; font-size: 1.3rem; }
 .team-mini span { font-size: 0.76rem; color: var(--gray-600); font-weight: 600; display: block; }
 
 /* ============ Forms (appointment page) ============ */
@@ -788,8 +826,10 @@ h1, h2, h3, h4 {
   .gallery-strip { grid-template-columns: repeat(3, 1fr); }
 }
 
-@media (max-width: 860px) {
-  .topbar .topbar-group:first-child { display: none; }
+/* The full desktop nav (many top-level items + dropdowns) only has room to
+   sit on one line once the container is wide enough — below this, switch to
+   the hamburger menu rather than let it wrap or overflow. */
+@media (max-width: 1140px) {
   .nav-links, .nav-cta .icon-btn.search-only { display: none; }
   .nav-burger { display: flex; }
   .nav-links.mobile-open {
@@ -801,13 +841,25 @@ h1, h2, h3, h4 {
     padding: 10px 20px 20px;
     box-shadow: var(--shadow-lg);
     gap: 0;
+    max-height: calc(100vh - 100%);
+    overflow-y: auto;
   }
   .nav-links.mobile-open > li { width: 100%; }
+  .nav-links.mobile-open > li > a, .nav-links.mobile-open > li > button.nav-toggle {
+    font-family: var(--font-body);
+    font-size: 0.94rem;
+    letter-spacing: normal;
+    padding: 12px 14px;
+  }
   .nav-links.mobile-open .dropdown {
     position: static; opacity: 1; visibility: visible; transform: none;
     box-shadow: none; display: none; padding-left: 10px; margin-top: 4px;
   }
   .nav-links.mobile-open li.open .dropdown { display: block; }
+}
+
+@media (max-width: 860px) {
+  .topbar .topbar-group:first-child { display: none; }
   .hero h1 { font-size: 2.2rem; }
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
   .card-grid, .card-grid.cols-6 { grid-template-columns: repeat(2, 1fr); }
@@ -911,6 +963,7 @@ h1, h2, h3, h4 {
 .mini-team-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; }
 .mini-team-card { text-align: center; }
 .mini-team-photo {
+  position: relative; overflow: hidden;
   width: 100%; aspect-ratio: 1; border-radius: 50%;
   background: linear-gradient(135deg, var(--navy), var(--navy-light));
   color: var(--white); display: grid; place-items: center;
@@ -1035,3 +1088,25 @@ h1, h2, h3, h4 {
 @media (max-width: 860px) {
   .data-table { min-width: 560px; }
 }
+
+/* ==========================================================================
+   Video spotlight (home page) + TikTok brand color
+   ========================================================================== */
+.video-section { background: var(--navy-dark); padding: 60px 0; }
+.video-section .section-head h2, .video-section .section-sub { color: var(--white); }
+.video-section .section-sub { color: rgba(255,255,255,0.75); }
+.video-embed {
+  position: relative;
+  width: 100%;
+  max-width: 860px;
+  margin: 0 auto;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  background: #000;
+}
+.video-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+.footer-social a.tiktok:hover { background: #000; color: var(--white); }
+.footer-social a.facebook:hover { background: #1877F2; color: var(--white); }
