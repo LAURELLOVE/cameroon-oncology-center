@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book an Appointment | Cameroon Oncology Center</title>
+<meta name="description" content="Request an appointment at Cameroon Oncology Center. Our team will confirm your booking by phone or email.">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="container">
+    <div class="topbar-group">
+      <a class="topbar-item" href="tel:+237676199595"><i class="fa-solid fa-phone"></i> +237 6 76 19 95 95</a>
+      <a class="topbar-item" href="mailto:info@camoncenter.org"><i class="fa-solid fa-envelope"></i> info@camoncenter.org</a>
+      <span class="topbar-item"><i class="fa-solid fa-location-dot"></i> <span data-i18n="common.topbar.address">Bekoko - Dibombari, Littoral Region, Cameroon</span></span>
+    </div>
+    <div class="topbar-group">
+      <span class="topbar-item"><i class="fa-solid fa-clock"></i> <strong data-i18n="common.topbar.hours">Open 24 Hours</strong>&nbsp;· <span data-i18n="common.topbar.days">7 Days a Week</span></span>
+      <div class="lang-switch"><button data-lang="en" class="active">EN</button>|<button data-lang="fr">FR</button></div>
+      <button class="topbar-search-btn" data-open-search data-i18n-title="common.topbar.search_title" title="Search site"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </div>
+  </div>
+</div>
+
+<header class="navbar">
+  <div class="container">
+    <a href="index.html" class="brand">
+      <div class="brand-mark"><span></span><span></span><span></span><span></span></div>
+      <span class="brand-text">
+        <span class="brand-name">CAMEROON<br>ONCOLOGY <em>CENTER</em></span>
+        <span class="brand-tag" data-i18n="common.brand.tagline">Hope · Care · Life</span>
+      </span>
+    </a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html" data-i18n="common.nav.home">Home</a></li>
+        <li class="has-dropdown">
+          <button class="nav-toggle"><span data-i18n="common.nav.about">About Us</span> <i class="fa-solid fa-chevron-down chev"></i></button>
+          <div class="dropdown">
+            <a href="about.html" data-i18n="common.nav.about_glance">COC at a Glance</a>
+            <a href="about.html#leadership" data-i18n="common.nav.about_leadership">Our Leadership</a>
+            <a href="about.html#reach" data-i18n="common.nav.about_reach">Our Regional Reach</a>
+          </div>
+        </li>
+        <li class="has-dropdown">
+          <button class="nav-toggle"><span data-i18n="common.nav.services">Our Services</span> <i class="fa-solid fa-chevron-down chev"></i></button>
+          <div class="dropdown">
+            <a href="index.html#services" data-i18n="common.nav.services_radiation">Radiation Oncology</a>
+            <a href="medical-oncology.html" data-i18n="common.nav.services_medical">Medical Oncology</a>
+            <a href="index.html#services" data-i18n="common.nav.services_surgical">Surgical Oncology</a>
+            <a href="histopathology.html" data-i18n="common.nav.services_lab">Laboratory &amp; Pathology</a>
+            <a href="radiology-imaging.html" data-i18n="common.nav.services_imaging">Imaging &amp; Nuclear Medicine</a>
+            <a href="nuclear-medicine.html">Nuclear Medicine</a>
+            <a href="spect-ct-womens-health.html">SPECT-CT for Women's Health</a>
+            <a href="index.html#services" data-i18n="common.nav.services_pharmacy">Pharmacy</a>
+          </div>
+        </li>
+        <li><a href="patients-families.html" data-i18n="common.nav.patients">For Patients</a></li>
+        <li><a href="research-training.html" data-i18n="common.nav.research">Research &amp; Training</a></li>
+        <li><a href="about.html#reach" data-i18n="common.nav.news">News &amp; Media</a></li>
+        <li><a href="appointment.html" data-i18n="common.nav.contact">Contact Us</a></li>
+      </ul>
+    </nav>
+    <div class="nav-cta">
+      <button class="icon-btn search-only" data-open-search data-i18n-title="common.topbar.search_title" title="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+      <a href="appointment.html" class="btn btn-primary btn-sm" data-i18n="common.buttons.book_appointment">Book an Appointment</a>
+      <button class="nav-burger" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<section class="page-banner" style="padding-bottom:140px;">
+  <div class="container">
+    <div class="crumb" data-i18n="appt.banner.crumb">For Patients</div>
+    <h1 data-i18n="appt.banner.title">Book an Appointment</h1>
+    <p data-i18n="appt.banner.desc">Fill in the form below and our patient coordination team will contact you to confirm your appointment date and time.</p>
+  </div>
+</section>
+
+<section class="section-tight">
+  <div class="container">
+    <div class="form-card reveal">
+      <h2 style="font-size:1.4rem;margin-bottom:6px;" data-i18n="appt.form.title">Request an Appointment</h2>
+      <p style="color:var(--gray-600);font-size:0.9rem;margin-bottom:24px;" data-i18n="appt.form.desc">Fields marked * are required. This is a request only — it does not guarantee a slot until confirmed by our team.</p>
+
+      <form id="appointment-form" novalidate>
+        <div class="form-grid">
+          <div class="form-group full">
+            <label for="fullName"><span data-i18n="appt.form.fullname_label">Full Name</span> <span class="req">*</span></label>
+            <input type="text" id="fullName" name="fullName" data-i18n-placeholder="appt.form.fullname_placeholder" placeholder="e.g. Ngozi Achu">
+            <span class="form-error"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="email"><span data-i18n="appt.form.email_label">Email Address</span> <span class="req">*</span></label>
+            <input type="email" id="email" name="email" data-i18n-placeholder="appt.form.email_placeholder" placeholder="you@example.com">
+            <span class="form-error"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="phone"><span data-i18n="appt.form.phone_label">Phone Number</span> <span class="req">*</span></label>
+            <input type="tel" id="phone" name="phone" data-i18n-placeholder="appt.form.phone_placeholder" placeholder="+237 6XX XXX XXX">
+            <span class="form-error"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="service"><span data-i18n="appt.form.service_label">Service Needed</span> <span class="req">*</span></label>
+            <select id="service" name="service">
+              <option value="" data-i18n="appt.form.service_placeholder">Select a service</option>
+              <option value="radiation" data-i18n="appt.form.service_radiation">Radiation Oncology</option>
+              <option value="medical" data-i18n="appt.form.service_medical">Medical Oncology</option>
+              <option value="surgical" data-i18n="appt.form.service_surgical">Surgical Oncology</option>
+              <option value="imaging" data-i18n="appt.form.service_imaging">Imaging &amp; Nuclear Medicine</option>
+              <option value="lab" data-i18n="appt.form.service_lab">Laboratory &amp; Pathology</option>
+              <option value="pharmacy" data-i18n="appt.form.service_pharmacy">Pharmacy</option>
+              <option value="other" data-i18n="appt.form.service_other">Other / Not sure</option>
+            </select>
+            <span class="form-error"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="date"><span data-i18n="appt.form.date_label">Preferred Date</span> <span class="req">*</span></label>
+            <input type="date" id="date" name="date">
+            <span class="form-error"></span>
+          </div>
+
+          <div class="form-group full">
+            <label for="message" data-i18n="appt.form.notes_label">Additional Notes</label>
+            <textarea id="message" name="message" data-i18n-placeholder="appt.form.notes_placeholder" placeholder="Briefly describe your reason for visit or any relevant medical history"></textarea>
+            <span class="form-error"></span>
+          </div>
+        </div>
+
+        <div class="form-submit-row">
+          <button type="submit" class="btn btn-primary"><span data-i18n="appt.form.submit_btn">Request Appointment</span> <i class="fa-solid fa-arrow-right"></i></button>
+          <span class="form-note" data-i18n-html="appt.form.note_html">Or call us directly at <a href="tel:+237676199595" style="color:var(--navy);font-weight:600;">+237 6 76 19 95 95</a> for urgent cases.</span>
+        </div>
+      </form>
+
+      <div class="form-success">
+        <i class="fa-solid fa-circle-check"></i>
+        <div>
+          <strong data-i18n="appt.success.title">Request received.</strong><br>
+          <span data-i18n="appt.success.desc">Our patient coordination team will contact you shortly to confirm your appointment.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <a href="index.html" class="footer-brand">
+        <div class="brand-mark"><span></span><span></span><span></span><span></span></div>
+        <span class="brand-text">
+          <span class="brand-name" style="color:var(--white)">CAMEROON<br>ONCOLOGY CENTER</span>
+          <span class="brand-tag" style="color:var(--gray-400)" data-i18n="common.brand.tagline">Hope · Care · Life</span>
+        </span>
+      </a>
+      <div class="footer-links">
+        <a href="about.html" data-i18n="common.footer.about">About Us</a>
+        <a href="index.html#services" data-i18n="common.footer.services">Our Services</a>
+        <a href="patients-families.html" data-i18n="common.footer.patients">Patients &amp; Families</a>
+        <a href="research-training.html" data-i18n="common.footer.research">Research &amp; Training</a>
+        <a href="histopathology.html" data-i18n="common.footer.lab">Laboratory &amp; Pathology</a>
+      </div>
+      <div class="footer-social">
+        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+    </div>
+    <p class="footer-tagline" data-i18n="home.footer_tagline">A Healthier Cameroon. A Brighter Tomorrow.</p>
+    <div class="footer-bottom">
+      <span>&copy; <span data-year></span> <span data-i18n="common.footer.copyright_suffix">Cameroon Oncology Center. All rights reserved.</span></span>
+      <span><a href="#" data-i18n="common.footer.privacy">Privacy Policy</a> &nbsp;|&nbsp; <a href="#" data-i18n="common.footer.terms">Terms of Use</a> &nbsp;|&nbsp; <a href="#" data-i18n="common.footer.sitemap">Site Map</a></span>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+<div class="search-overlay">
+  <div>
+    <div class="search-box">
+      <input type="text" data-i18n-placeholder="common.search.placeholder" placeholder="Search services, leadership, pages...">
+      <button class="go" data-i18n="common.search.button">Search</button>
+      <button class="close-search">&times;</button>
+    </div>
+    <p class="search-hint" data-i18n="common.search.hint">Press Esc to close</p>
+  </div>
+</div>
+
+<script src="js/i18n.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

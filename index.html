@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cameroon Oncology Center | Hope. Care. Life.</title>
+<meta name="description" content="Cameroon Oncology Center is a Ministry of Public Health designated Centre of Excellence in cancer care, providing comprehensive, high-quality, affordable and compassionate oncology services.">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ============ Top bar ============ -->
+<div class="topbar">
+  <div class="container">
+    <div class="topbar-group">
+      <a class="topbar-item" href="tel:+237676199595"><i class="fa-solid fa-phone"></i> +237 6 76 19 95 95</a>
+      <a class="topbar-item" href="mailto:info@camoncenter.org"><i class="fa-solid fa-envelope"></i> info@camoncenter.org</a>
+      <span class="topbar-item"><i class="fa-solid fa-location-dot"></i> <span data-i18n="common.topbar.address">Bekoko - Dibombari, Littoral Region, Cameroon</span></span>
+    </div>
+    <div class="topbar-group">
+      <span class="topbar-item"><i class="fa-solid fa-clock"></i> <strong data-i18n="common.topbar.hours">Open 24 Hours</strong>&nbsp;· <span data-i18n="common.topbar.days">7 Days a Week</span></span>
+      <div class="lang-switch">
+        <button data-lang="en" class="active">EN</button>|<button data-lang="fr">FR</button>
+      </div>
+      <button class="topbar-search-btn" data-open-search data-i18n-title="common.topbar.search_title" title="Search site"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </div>
+  </div>
+</div>
+
+<!-- ============ Main nav ============ -->
+<header class="navbar">
+  <div class="container">
+    <a href="index.html" class="brand">
+      <div class="brand-mark"><span></span><span></span><span></span><span></span></div>
+      <span class="brand-text">
+        <span class="brand-name">CAMEROON<br>ONCOLOGY <em>CENTER</em></span>
+        <span class="brand-tag" data-i18n="common.brand.tagline">Hope · Care · Life</span>
+      </span>
+    </a>
+
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html" class="router-active" data-i18n="common.nav.home">Home</a></li>
+        <li class="has-dropdown">
+          <button class="nav-toggle"><span data-i18n="common.nav.about">About Us</span> <i class="fa-solid fa-chevron-down chev"></i></button>
+          <div class="dropdown">
+            <a href="about.html" data-i18n="common.nav.about_glance">COC at a Glance</a>
+            <a href="about.html#leadership" data-i18n="common.nav.about_leadership">Our Leadership</a>
+            <a href="about.html#reach" data-i18n="common.nav.about_reach">Our Regional Reach</a>
+          </div>
+        </li>
+        <li class="has-dropdown">
+          <button class="nav-toggle"><span data-i18n="common.nav.services">Our Services</span> <i class="fa-solid fa-chevron-down chev"></i></button>
+          <div class="dropdown">
+            <a href="index.html#services" data-i18n="common.nav.services_radiation">Radiation Oncology</a>
+            <a href="medical-oncology.html" data-i18n="common.nav.services_medical">Medical Oncology</a>
+            <a href="index.html#services" data-i18n="common.nav.services_surgical">Surgical Oncology</a>
+            <a href="histopathology.html" data-i18n="common.nav.services_lab">Laboratory &amp; Pathology</a>
+            <a href="radiology-imaging.html" data-i18n="common.nav.services_imaging">Imaging &amp; Nuclear Medicine</a>
+            <a href="nuclear-medicine.html">Nuclear Medicine</a>
+            <a href="spect-ct-womens-health.html">SPECT-CT for Women's Health</a>
+            <a href="index.html#services" data-i18n="common.nav.services_pharmacy">Pharmacy</a>
+          </div>
+        </li>
+        <li class="has-dropdown">
+          <button class="nav-toggle"><span data-i18n="common.nav.patients">For Patients</span> <i class="fa-solid fa-chevron-down chev"></i></button>
+          <div class="dropdown">
+            <a href="appointment.html" data-i18n="common.nav.patients_book">Book an Appointment</a>
+            <a href="patients-families.html" data-i18n="common.nav.patients_support">Patient Support</a>
+            <a href="patients-families.html#financial" data-i18n="common.nav.patients_financial">Financial &amp; Insurance</a>
+            <a href="urgent-care.html">Urgent Care</a>
+            <a href="directions.html">Directions</a>
+          </div>
+        </li>
+        <li class="has-dropdown">
+          <button class="nav-toggle"><span data-i18n="common.nav.research">Research &amp; Training</span> <i class="fa-solid fa-chevron-down chev"></i></button>
+          <div class="dropdown">
+            <a href="research-training.html" data-i18n="common.nav.research_publications">Publications</a>
+            <a href="research-training.html#residency" data-i18n="common.nav.research_training">Training Programs</a>
+          </div>
+        </li>
+        <li class="has-dropdown">
+          <button class="nav-toggle"><span data-i18n="common.nav.news">News &amp; Media</span> <i class="fa-solid fa-chevron-down chev"></i></button>
+          <div class="dropdown">
+            <a href="about.html#reach" data-i18n="common.nav.news_outreach">Community Outreach</a>
+            <a href="about.html" data-i18n="common.nav.news_press">Press &amp; Announcements</a>
+          </div>
+        </li>
+        <li><a href="about.html#leadership" data-i18n="common.nav.careers">Careers</a></li>
+        <li><a href="appointment.html" data-i18n="common.nav.contact">Contact Us</a></li>
+      </ul>
+    </nav>
+
+    <div class="nav-cta">
+      <button class="icon-btn search-only" data-open-search data-i18n-title="common.topbar.search_title" title="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+      <a href="appointment.html" class="btn btn-primary btn-sm" data-i18n="common.buttons.book_appointment">Book an Appointment</a>
+      <button class="nav-burger" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ Hero ============ -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="hero-eyebrow" data-i18n="home.hero.eyebrow">Cameroon Oncology Center</div>
+      <h1 data-i18n-html="home.hero.title_html">Together<br>Against <span>Cancer</span></h1>
+      <p class="hero-italic" data-i18n="home.hero.italic">Advanced Care. Compassionate People. A Healthier Tomorrow.</p>
+      <p class="hero-desc" data-i18n="home.hero.desc">Cameroon Oncology Center is a Ministry of Public Health designated Centre of Excellence in cancer care, providing comprehensive, high-quality, affordable and compassionate oncology services for patients in Cameroon and the region.</p>
+      <div class="hero-btns">
+        <a href="appointment.html" class="btn btn-primary"><span data-i18n="common.buttons.book_appointment">Book an Appointment</span> <i class="fa-solid fa-arrow-right"></i></a>
+        <a href="#services" class="btn btn-outline"><span data-i18n="common.nav.services">Our Services</span> <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+    <div class="hero-media">
+      <div class="hero-tag" data-i18n-html="home.hero.tag_html">Hope<br>Care<br>Life</div>
+      <div class="ph ph-hero">
+        <i class="fa-solid fa-hospital"></i>
+        <span class="ph-label" data-i18n="home.hero.photo_label">Photo placeholder — replace with a real photo of the COC facility (images/hero-building.jpg)</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Stats bar ============ -->
+<section class="stats-bar">
+  <div class="container stats-grid">
+    <div class="stat-item"><div class="stat-icon"><i class="fa-solid fa-users"></i></div><div><div class="stat-num">1,700+</div><div class="stat-label" data-i18n="home.stats.consultations_label">Patient Consultations in 2025</div></div></div>
+    <div class="stat-item"><div class="stat-icon"><i class="fa-solid fa-ribbon"></i></div><div><div class="stat-num">470+</div><div class="stat-label" data-i18n="home.stats.radiotherapy_label">Patients Received Radiotherapy in 2025</div></div></div>
+    <div class="stat-item"><div class="stat-icon"><i class="fa-solid fa-droplet"></i></div><div><div class="stat-num">1,950+</div><div class="stat-label" data-i18n="home.stats.chemo_label">Chemotherapy Sessions in 2025</div></div></div>
+    <div class="stat-item"><div class="stat-icon"><i class="fa-solid fa-microscope"></i></div><div><div class="stat-num" data-i18n="home.stats.diagnostic_num">Comprehensive</div><div class="stat-label" data-i18n="home.stats.diagnostic_label">Diagnostic &amp; Imaging Services</div></div></div>
+    <div class="stat-item"><div class="stat-icon"><i class="fa-solid fa-globe"></i></div><div><div class="stat-num" data-i18n="home.stats.serving_num">Serving Patients</div><div class="stat-label" data-i18n="home.stats.serving_label">Across Cameroon and the Region</div></div></div>
+  </div>
+</section>
+
+<!-- ============ Clinical Services ============ -->
+<section class="section" id="services">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2 class="section-title" data-i18n="home.services.title">Our Clinical Services</h2>
+      <a href="#services" class="btn-link"><span data-i18n="home.services.viewall">View All Services</span> <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+    <div class="card-grid cols-6 reveal">
+      <div class="service-card">
+        <div class="ph"><i class="fa-solid fa-radiation"></i><span class="ph-label" data-i18n="home.services.radiation_title">Radiation Oncology</span></div>
+        <div class="service-card-body">
+          <h3 data-i18n="home.services.radiation_title">Radiation Oncology</h3>
+          <p data-i18n="home.services.radiation_desc">Varian iX and Varian Trilogy linear accelerators, IMRT, 3DCRT and image-guided treatment.</p>
+          <a href="#services" class="btn-link"><span data-i18n="common.buttons.learn_more">Learn More</span> <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="ph tone-red"><i class="fa-solid fa-syringe"></i><span class="ph-label" data-i18n="home.services.medical_title">Medical Oncology</span></div>
+        <div class="service-card-body">
+          <h3 data-i18n="home.services.medical_title">Medical Oncology</h3>
+          <p data-i18n="home.services.medical_desc">Chemotherapy, targeted therapy and immunotherapy.</p>
+          <a href="medical-oncology.html" class="btn-link"><span data-i18n="common.buttons.learn_more">Learn More</span> <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="ph tone-gold"><i class="fa-solid fa-user-doctor"></i><span class="ph-label" data-i18n="home.services.surgical_title">Surgical Oncology</span></div>
+        <div class="service-card-body">
+          <h3 data-i18n="home.services.surgical_title">Surgical Oncology</h3>
+          <p data-i18n="home.services.surgical_desc">Gynecologic, urologic and general oncology surgery.</p>
+          <a href="#services" class="btn-link"><span data-i18n="common.buttons.learn_more">Learn More</span> <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="ph"><i class="fa-solid fa-x-ray"></i><span class="ph-label" data-i18n="home.services.imaging_title">Imaging &amp; Nuclear Medicine</span></div>
+        <div class="service-card-body">
+          <h3 data-i18n="home.services.imaging_title">Imaging &amp; Nuclear Medicine</h3>
+          <p data-i18n="home.services.imaging_desc">CT, CT-Sim, MRI, Ultrasound, SPECT-CT and PET-CT (coming soon).</p>
+          <a href="#services" class="btn-link"><span data-i18n="common.buttons.learn_more">Learn More</span> <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="ph tone-red"><i class="fa-solid fa-microscope"></i><span class="ph-label" data-i18n="home.services.lab_title">Laboratory &amp; Pathology</span></div>
+        <div class="service-card-body">
+          <h3 data-i18n="home.services.lab_title">Laboratory &amp; Pathology</h3>
+          <p data-i18n="home.services.lab_desc">Comprehensive laboratory services and histopathology.</p>
+          <a href="histopathology.html" class="btn-link"><span data-i18n="common.buttons.learn_more">Learn More</span> <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="ph tone-gold"><i class="fa-solid fa-pills"></i><span class="ph-label" data-i18n="home.services.pharmacy_title">Pharmacy</span></div>
+        <div class="service-card-body">
+          <h3 data-i18n="home.services.pharmacy_title">Pharmacy</h3>
+          <p data-i18n="home.services.pharmacy_desc">Three pharmacy service points with day and night coverage.</p>
+          <a href="#services" class="btn-link"><span data-i18n="common.buttons.learn_more">Learn More</span> <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Technology ============ -->
+<section class="section bg-pale">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <h2 class="section-title" data-i18n="home.tech.title">Our Technology</h2>
+        <p class="section-sub" data-i18n="home.tech.sub">World-class technology for accurate diagnosis and advanced cancer treatment.</p>
+      </div>
+      <a href="#services" class="btn btn-outline btn-sm"><span data-i18n="home.tech.explore">Explore Our Technology</span> <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+    <div class="card-grid reveal">
+      <div class="tech-card">
+        <div class="ph"><i class="fa-solid fa-atom"></i><span class="ph-label" data-i18n="home.tech.item1_title">Varian iX Linear Accelerator</span></div>
+        <div class="tech-card-body"><h3 data-i18n="home.tech.item1_title">Varian iX Linear Accelerator</h3><p data-i18n="home.tech.item1_desc">High-precision radiotherapy for optimal cancer care.</p></div>
+      </div>
+      <div class="tech-card">
+        <div class="ph tone-gold"><i class="fa-solid fa-atom"></i><span class="ph-label" data-i18n="home.tech.item2_title">Varian Trilogy Linear Accelerator</span></div>
+        <div class="tech-card-body"><h3 data-i18n="home.tech.item2_title">Varian Trilogy Linear Accelerator</h3><p data-i18n="home.tech.item2_desc">Advanced treatment options including 3D-CRT, IMRT and more.</p></div>
+      </div>
+      <div class="tech-card">
+        <div class="ph tone-light"><i class="fa-solid fa-circle-notch"></i><span class="ph-label" data-i18n="home.tech.item3_title">Philips Big Bore CT Simulator</span></div>
+        <div class="tech-card-body"><h3 data-i18n="home.tech.item3_title">Philips Big Bore CT Simulator</h3><p data-i18n="home.tech.item3_desc">Advanced imaging for precise treatment planning.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Values ============ -->
+<section class="section" id="values">
+  <div class="container">
+    <div class="section-head reveal"><h2 class="section-title" data-i18n="home.values.title">Our Values</h2></div>
+    <div class="card-grid cols-6 reveal">
+      <div class="value-item"><div class="value-icon" style="background:var(--red)"><i class="fa-solid fa-heart"></i></div><h4 data-i18n="home.values.compassion_title">Compassion</h4><p data-i18n="home.values.compassion_desc">We care for every patient with dignity and respect.</p></div>
+      <div class="value-item"><div class="value-icon" style="background:var(--navy)"><i class="fa-solid fa-star"></i></div><h4 data-i18n="home.values.excellence_title">Excellence</h4><p data-i18n="home.values.excellence_desc">We strive for the highest standards in all we do.</p></div>
+      <div class="value-item"><div class="value-icon" style="background:var(--navy-light)"><i class="fa-solid fa-shield-halved"></i></div><h4 data-i18n="home.values.integrity_title">Integrity</h4><p data-i18n="home.values.integrity_desc">We are honest, transparent and accountable.</p></div>
+      <div class="value-item"><div class="value-icon" style="background:var(--navy-dark)"><i class="fa-solid fa-people-group"></i></div><h4 data-i18n="home.values.teamwork_title">Teamwork</h4><p data-i18n="home.values.teamwork_desc">We achieve more together.</p></div>
+      <div class="value-item"><div class="value-icon" style="background:var(--red-dark)"><i class="fa-solid fa-lightbulb"></i></div><h4 data-i18n="home.values.innovation_title">Innovation</h4><p data-i18n="home.values.innovation_desc">We embrace new ideas and technology.</p></div>
+      <div class="value-item"><div class="value-icon" style="background:var(--gold-dark)"><i class="fa-solid fa-hands-holding-circle"></i></div><h4 data-i18n="home.values.accessibility_title">Accessibility</h4><p data-i18n="home.values.accessibility_desc">We are committed to making cancer care available to all.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Centre of Excellence / Partners ============ -->
+<section class="section-tight">
+  <div class="container">
+    <div class="card-grid reveal">
+      <div class="info-panel">
+        <h3 data-i18n="home.excellence.title">Centre of Excellence</h3>
+        <p data-i18n="home.excellence.desc">Designated by the Ministry of Public Health as a Centre of Excellence in Cancer Care.</p>
+        <p style="font-weight:700;color:var(--navy-dark)" data-i18n-html="home.excellence.ministry_html">Ministry of Public Health<br>Centre of Excellence in Cancer Care</p>
+        <a href="about.html" class="btn btn-outline btn-sm"><span data-i18n="home.excellence.readmore">Read the Official Designation</span> <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="info-panel">
+        <h3 data-i18n="home.quality.title">International Quality Verification</h3>
+        <p data-i18n="home.quality.desc">Our radiotherapy services have been independently evaluated by IROC Houston (MD Anderson Cancer Center), confirming high-quality and safe treatment delivery.</p>
+        <a href="about.html" class="btn btn-outline btn-sm"><span data-i18n="home.quality.viewreport">View Full Report</span> <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="info-panel">
+        <h3 data-i18n="home.partners.title">Our International Partners</h3>
+        <div class="partners-row">
+          <div class="partner-mini">
+            <div class="partner-avatar">WM</div>
+            <div><strong>Prof. Waleed Mourad</strong><span data-i18n="home.partners.p1_role">Radiation Oncologist, UK</span></div>
+          </div>
+          <div class="partner-mini">
+            <div class="partner-avatar">EF</div>
+            <div><strong>Prof. Edmund Folefac</strong><span data-i18n="home.partners.p2_role">Medical Oncologist, USA</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Footer ============ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <a href="index.html" class="footer-brand">
+        <div class="brand-mark"><span></span><span></span><span></span><span></span></div>
+        <span class="brand-text">
+          <span class="brand-name" style="color:var(--white)">CAMEROON<br>ONCOLOGY CENTER</span>
+          <span class="brand-tag" style="color:var(--gray-400)" data-i18n="common.brand.tagline">Hope · Care · Life</span>
+        </span>
+      </a>
+      <div class="footer-links">
+        <a href="about.html" data-i18n="common.footer.about">About Us</a>
+        <a href="index.html#services" data-i18n="common.footer.services">Our Services</a>
+        <a href="patients-families.html" data-i18n="common.footer.patients">Patients &amp; Families</a>
+        <a href="research-training.html" data-i18n="common.footer.research">Research &amp; Training</a>
+        <a href="appointment.html" data-i18n="common.footer.book">Book an Appointment</a>
+        <a href="histopathology.html" data-i18n="common.footer.lab">Laboratory &amp; Pathology</a>
+      </div>
+      <div class="footer-social">
+        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+    </div>
+    <p class="footer-tagline" data-i18n="home.footer_tagline">A Healthier Cameroon. A Brighter Tomorrow.</p>
+    <div class="footer-bottom">
+      <span>&copy; <span data-year></span> <span data-i18n="common.footer.copyright_suffix">Cameroon Oncology Center. All rights reserved.</span></span>
+      <span><a href="#" data-i18n="common.footer.privacy">Privacy Policy</a> &nbsp;|&nbsp; <a href="#" data-i18n="common.footer.terms">Terms of Use</a> &nbsp;|&nbsp; <a href="#" data-i18n="common.footer.sitemap">Site Map</a></span>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+<div class="search-overlay">
+  <div>
+    <div class="search-box">
+      <input type="text" data-i18n-placeholder="common.search.placeholder" placeholder="Search services, leadership, pages...">
+      <button class="go" data-i18n="common.search.button">Search</button>
+      <button class="close-search">&times;</button>
+    </div>
+    <p class="search-hint" data-i18n="common.search.hint">Press Esc to close</p>
+  </div>
+</div>
+
+<script src="js/i18n.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
