@@ -403,7 +403,34 @@ h1, h2, h3, h4 {
 }
 .ph i { font-size: 1.8rem; opacity: 0.9; }
 .ph .ph-label { font-size: 0.72rem; letter-spacing: 0.5px; opacity: 0.85; padding: 0 10px; position: relative; z-index: 1; }
-.ph.ph-hero { min-height: 380px; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); }
+/* A hero photo just dropped in a plain rounded box reads as "pasted in".
+   A soft blurred color glow behind it plus a layered shadow/ring gives it
+   the depth of a properly art-directed photo instead. */
+.ph.ph-hero {
+  min-height: 380px;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 30px 60px -15px rgba(11, 42, 107, 0.35), 0 0 0 6px rgba(255, 255, 255, 0.6);
+  isolation: isolate;
+  /* The glow below needs to bleed past the box, so this one variant opts
+     out of the base .ph overflow:hidden — its own img/stripe overlay get
+     border-radius back explicitly so their corners stay clipped. */
+  overflow: visible;
+}
+.ph.ph-hero img { border-radius: inherit; }
+.ph.ph-hero::before { border-radius: inherit; }
+.ph.ph-hero::after {
+  content: '';
+  position: absolute;
+  inset: -16px;
+  z-index: -1;
+  border-radius: inherit;
+  background: radial-gradient(circle at 60% 40%, rgba(20, 52, 156, 0.35), rgba(226, 35, 26, 0.12) 55%, transparent 75%);
+  filter: blur(24px);
+}
+/* The negative inset above can bleed past the viewport edge on narrow
+   screens where the hero already sits flush against the container padding
+   — clip it at the section level rather than shrinking the glow further. */
+.hero, .page-banner, .section, .section-tight { overflow-x: clip; }
 .ph.tone-red { background: linear-gradient(135deg, var(--red) 0%, #e0685a 100%); }
 .ph.tone-gold { background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold) 100%); }
 .ph.tone-light { background: linear-gradient(135deg, #dfe9f3 0%, #c9d9e8 100%); color: var(--navy-dark); }
@@ -447,6 +474,33 @@ h1, h2, h3, h4 {
 /* ============ Cards: services / tech / values ============ */
 .card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .card-grid.cols-6 { grid-template-columns: repeat(6, 1fr); }
+.card-grid.cols-5 { grid-template-columns: repeat(5, 1fr); }
+
+/* ============ Clinical service cards (photo + overlapping icon badge) ============ */
+.clinical-card { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); }
+.clinical-card-photo {
+  position: relative; overflow: hidden;
+  height: 150px;
+  border-radius: var(--radius) var(--radius) 0 0;
+  background: linear-gradient(135deg, var(--navy), var(--navy-light));
+}
+.clinical-card-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 20%; }
+.clinical-card-badge {
+  position: relative; z-index: 2;
+  width: 50px; height: 50px;
+  margin: -25px 0 0 16px;
+  border-radius: 50%;
+  background: var(--navy);
+  color: var(--white);
+  display: grid; place-items: center;
+  font-size: 1.15rem;
+  border: 4px solid var(--white);
+  box-shadow: var(--shadow);
+}
+.clinical-card-body { padding: 14px 18px 20px; }
+.clinical-card-body h4 { font-size: 1rem; color: var(--navy-dark); margin-bottom: 8px; }
+.clinical-card-body p { font-size: 0.83rem; color: var(--gray-600); line-height: 1.5; margin-bottom: 12px; }
+.clinical-card-body a { font-size: 0.82rem; font-weight: 700; color: var(--navy); }
 
 .service-card {
   background: var(--white);
