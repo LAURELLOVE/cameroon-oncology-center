@@ -221,15 +221,30 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      // No backend is wired up in this template — this simulates a
-      // successful submission so the flow is demonstrable end-to-end.
-      // Replace with a real request (e.g. fetch() to your API, or a
-      // service like Formspree/EmailJS) when you have a backend.
+      // No server backend is wired up — submitting opens the visitor's own
+      // email app with the request pre-filled and addressed to the patient
+      // coordination team, so it's actually delivered somewhere real
+      // instead of being silently discarded.
       const submitBtn = apptForm.querySelector('button[type="submit"]');
       submitBtn.disabled = true;
       submitBtn.textContent = t('appt.form.submitting_btn');
 
+      const data = Object.fromEntries(new FormData(apptForm).entries());
+      const serviceField = apptForm.querySelector('#service');
+      const serviceLabel = serviceField?.selectedOptions[0]?.textContent || data.service;
+      const subject = `Appointment Request — ${data.fullName}`;
+      const body = [
+        `Full Name: ${data.fullName}`,
+        `Email: ${data.email}`,
+        `Phone: ${data.phone}`,
+        `Service Needed: ${serviceLabel}`,
+        `Preferred Date: ${data.date}`,
+        `Additional Notes: ${data.message || '(none)'}`,
+      ].join('\n');
+      const mailtoUrl = `mailto:info@camoncenter.org?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
       setTimeout(() => {
+        window.location.href = mailtoUrl;
         apptForm.reset();
         apptForm.style.display = 'none';
         successBox.classList.add('show');

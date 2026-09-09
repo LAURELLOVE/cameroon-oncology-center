@@ -310,8 +310,8 @@ const translations = {
         note_html: "Or call us directly at <a href=\"tel:+237676199595\" style=\"color:var(--navy);font-weight:600;\">+237 6 76 19 95 95</a> for urgent cases."
       },
       success: {
-        title: "Request received.",
-        desc: "Our patient coordination team will contact you shortly to confirm your appointment."
+        title: "Almost done — check your email app.",
+        desc: "We've opened an email pre-filled with your request. Press Send there to deliver it to our patient coordination team."
       },
       validation: {
         fullName: "Please enter your full name.",
@@ -1707,8 +1707,8 @@ const translations = {
         note_html: "Ou appelez-nous directement au <a href=\"tel:+237676199595\" style=\"color:var(--navy);font-weight:600;\">+237 6 76 19 95 95</a> pour les cas urgents."
       },
       success: {
-        title: "Demande reçue.",
-        desc: "Notre équipe de coordination des patients vous contactera sous peu pour confirmer votre rendez-vous."
+        title: "Presque terminé — vérifiez votre application e-mail.",
+        desc: "Nous avons ouvert un e-mail pré-rempli avec votre demande. Appuyez sur Envoyer pour la transmettre à notre équipe de coordination des patients."
       },
       validation: {
         fullName: "Veuillez saisir votre nom complet.",

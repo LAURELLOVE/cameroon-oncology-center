@@ -1149,6 +1149,13 @@ img[src*="mosse-bassane"] { object-fit: contain !important; }
   font-weight: 800; font-size: 0.68rem; color: var(--navy);
 }
 .payment-chip span { font-size: 0.72rem; color: var(--gray-600); }
+/* MTN Mobile Money and Orange Money in their real brand colors, so they
+   read at a glance instead of looking like plain gray placeholders. */
+.payment-chip .box.momo { background: #ffcc00; border-color: #e6b800; color: #1a1a1a; }
+.payment-chip .box.orange-money { background: #ff7900; border-color: #e66d00; color: var(--white); }
+a.payment-chip { cursor: pointer; transition: transform 0.15s; }
+a.payment-chip:hover { transform: translateY(-3px); }
+a.payment-chip:hover span { color: var(--navy); text-decoration: underline; }
 
 /* Small square team avatars (service-page team rows) */
 .mini-team-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; }
