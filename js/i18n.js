@@ -2800,39 +2800,18 @@ const translations = {
       benefits_patients: { head: "Avantages pour les Patients", b1: "Accès plus rapide aux soins spécialisés", b2: "Soins plus proches de chez soi", b3: "Réduction des coûts de déplacement", b4: "Continuité des soins", b5: "Meilleurs résultats de traitement" },
       commitment: { head: "Notre Engagement", c1: "Partenariat", c2: "Qualité", c3: "Équité", c4: "Un Cameroun en meilleure santé" }
     }
-  },
-
-  /* The languages below are wired into the switcher but not yet
-     translated — t() already falls back to English key-by-key for
-     anything missing here, so selecting one of these shows English
-     content (with a one-time toast explaining that) until real
-     translations are filled in. Keeping them as real (empty) objects
-     rather than omitting them is what lets applyLanguage() accept the
-     selection instead of silently forcing it back to English. */
-  es: {}, pt: {}, de: {}, it: {}, ar: {}, zh: {}, ru: {}, sw: {},
-  dua: {}, ewo: {}, ful: {}, bas: {}, bbj: {}
+  }
 };
 
-/* Metadata for the language dropdown: code, native display name, and
-   whether real translated content exists yet (drives the "coming soon"
-   toast). Both the desktop topbar and the mobile drawer build their
-   <select> options from this single list. */
+/* Metadata for the language dropdown: code and native display name. Both
+   the desktop topbar and the mobile drawer build their <select> options
+   from this single list. Kept to English/French (the only two with real
+   translations) on request — other international and local-Cameroonian
+   languages were tried and then explicitly removed rather than left as
+   untranslated placeholders. */
 const SUPPORTED_LANGUAGES = [
   { code: 'en', name: 'English', translated: true },
   { code: 'fr', name: 'Français', translated: true },
-  { code: 'es', name: 'Español', translated: false },
-  { code: 'pt', name: 'Português', translated: false },
-  { code: 'de', name: 'Deutsch', translated: false },
-  { code: 'it', name: 'Italiano', translated: false },
-  { code: 'ar', name: 'العربية', translated: false },
-  { code: 'zh', name: '中文', translated: false },
-  { code: 'ru', name: 'Русский', translated: false },
-  { code: 'sw', name: 'Kiswahili', translated: false },
-  { code: 'dua', name: 'Duala', translated: false },
-  { code: 'ewo', name: 'Ewondo', translated: false },
-  { code: 'ful', name: 'Fulfulde', translated: false },
-  { code: 'bas', name: 'Bassa', translated: false },
-  { code: 'bbj', name: "Ghomala'", translated: false },
 ];
 
 function i18nGet(lang, key) {
