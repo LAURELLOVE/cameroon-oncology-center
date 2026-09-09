@@ -871,31 +871,69 @@ img[src*="mosse-bassane"] { object-fit: contain !important; }
    the hamburger menu rather than let it wrap or overflow. */
 @media (max-width: 1140px) {
   .nav-links, .nav-cta .icon-btn.search-only { display: none; }
-  .nav-burger { display: flex; }
+  .nav-burger { display: flex; position: relative; z-index: 2; }
+
+  /* Full-screen app-style drawer, not a dropdown panel: covers the whole
+     viewport below the sticky header (the header stays on top so the
+     burger — now drawn as an "X" via .nav-burger.open — remains reachable
+     to close it), scrolls its own content, and ends in a pinned action
+     footer (injected by js/main.js) instead of trailing off mid-list. */
   .nav-links.mobile-open {
     display: flex;
     flex-direction: column;
-    position: absolute;
-    top: 100%; left: 0; right: 0;
+    position: fixed;
+    inset: 0;
+    z-index: 480;
     background: var(--white);
-    padding: 10px 20px 20px;
-    box-shadow: var(--shadow-lg);
+    padding: 92px 24px 28px;
     gap: 0;
-    max-height: calc(100vh - 100%);
     overflow-y: auto;
+    animation: navDrawerIn 0.22s ease;
   }
-  .nav-links.mobile-open > li { width: 100%; }
+  @keyframes navDrawerIn {
+    from { opacity: 0; transform: translateY(-12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .nav-links.mobile-open > li { width: 100%; border-bottom: 1px solid var(--gray-100); }
   .nav-links.mobile-open > li > a, .nav-links.mobile-open > li > button.nav-toggle {
-    font-family: var(--font-body);
-    font-size: 0.94rem;
+    font-family: var(--font-head);
+    font-weight: 700;
+    font-size: 1.05rem;
     letter-spacing: normal;
-    padding: 12px 14px;
+    padding: 18px 4px;
+    width: 100%;
+    justify-content: space-between;
   }
   .nav-links.mobile-open .dropdown {
     position: static; opacity: 1; visibility: visible; transform: none;
-    box-shadow: none; display: none; padding-left: 10px; margin-top: 4px;
+    box-shadow: none; display: none; padding: 0 0 14px 12px; margin-top: -8px;
   }
+  .nav-links.mobile-open .dropdown a { padding: 12px 10px; font-size: 0.96rem; }
   .nav-links.mobile-open li.open .dropdown { display: block; }
+
+  /* Injected by js/main.js so every page gets it without per-page markup. */
+  .nav-menu-footer {
+    margin-top: auto;
+    padding-top: 22px;
+    border-bottom: none !important;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .nav-menu-footer .btn { width: 100%; justify-content: center; color: var(--white); }
+  .nav-menu-contact { display: flex; flex-direction: column; gap: 10px; }
+  .nav-menu-contact a { display: flex; align-items: center; gap: 10px; font-size: 0.86rem; color: var(--gray-600); }
+  .nav-menu-contact a i { color: var(--navy); width: 16px; text-align: center; }
+  .nav-menu-langs { display: flex; gap: 10px; }
+  .nav-menu-langs button {
+    flex: 1; padding: 10px; border-radius: var(--radius-sm);
+    border: 1px solid var(--gray-200); font-weight: 700; color: var(--gray-600);
+  }
+  .nav-menu-langs button.active { background: var(--navy); color: var(--white); border-color: var(--navy); }
+
+  /* Lock background scroll while the drawer is open (toggled on <body> by
+     js/main.js). */
+  body.nav-open { overflow: hidden; }
 }
 
 @media (max-width: 860px) {

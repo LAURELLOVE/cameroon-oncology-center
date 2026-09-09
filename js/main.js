@@ -15,12 +15,51 @@ document.addEventListener('DOMContentLoaded', () => {
   const burger = document.querySelector('.nav-burger');
   const navLinks = document.querySelector('.nav-links');
 
+  function closeMobileNav() {
+    navLinks?.classList.remove('mobile-open');
+    burger?.classList.remove('open');
+    burger?.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('nav-open');
+  }
+
   if (burger && navLinks) {
     burger.addEventListener('click', () => {
-      burger.classList.toggle('open');
-      navLinks.classList.toggle('mobile-open');
-      burger.setAttribute('aria-expanded', navLinks.classList.contains('mobile-open'));
+      const opening = !navLinks.classList.contains('mobile-open');
+      burger.classList.toggle('open', opening);
+      navLinks.classList.toggle('mobile-open', opening);
+      burger.setAttribute('aria-expanded', String(opening));
+      document.body.classList.toggle('nav-open', opening);
     });
+  }
+
+  /* ---------- Full-screen mobile drawer footer (CTA + contact + language) ----------
+     Injected here instead of duplicated across every page's markup, so it
+     shows up consistently everywhere the drawer does. */
+  if (navLinks && !navLinks.querySelector('.nav-menu-footer')) {
+    const footerLi = document.createElement('li');
+    footerLi.className = 'nav-menu-footer';
+    footerLi.innerHTML = `
+      <a href="${sitePrefix}appointment.html" class="btn btn-primary">${t('common.buttons.book_appointment')}</a>
+      <div class="nav-menu-contact">
+        <a href="tel:+237676199595"><i class="fa-solid fa-phone"></i> +237 6 76 19 95 95</a>
+        <a href="mailto:info@camoncenter.org"><i class="fa-solid fa-envelope"></i> info@camoncenter.org</a>
+      </div>
+      <div class="nav-menu-langs">
+        <button type="button" data-lang="en">EN</button>
+        <button type="button" data-lang="fr">FR</button>
+      </div>
+    `;
+    navLinks.appendChild(footerLi);
+
+    const syncLangButtons = () => {
+      const current = (typeof getCurrentLang === 'function') ? getCurrentLang() : 'en';
+      footerLi.querySelectorAll('[data-lang]').forEach((b) => b.classList.toggle('active', b.dataset.lang === current));
+    };
+    footerLi.querySelectorAll('[data-lang]').forEach((b) => {
+      b.addEventListener('click', () => { if (typeof applyLanguage === 'function') applyLanguage(b.dataset.lang); });
+    });
+    document.addEventListener('coc:language-changed', syncLangButtons);
+    syncLangButtons();
   }
 
   /* ---------- Dropdown menus (click-to-open on touch/mobile, hover on desktop via CSS) ---------- */
@@ -42,10 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ---------- Close mobile menu when a plain link is clicked ---------- */
   document.querySelectorAll('.nav-links a:not(.nav-toggle)').forEach((a) => {
-    a.addEventListener('click', () => {
-      navLinks?.classList.remove('mobile-open');
-      burger?.classList.remove('open');
-    });
+    a.addEventListener('click', closeMobileNav);
   });
 
   /* ---------- Search overlay ---------- */
@@ -67,7 +103,10 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') searchOverlay?.classList.remove('open');
+    if (e.key === 'Escape') {
+      searchOverlay?.classList.remove('open');
+      closeMobileNav();
+    }
   });
 
   document.querySelector('.search-box .go')?.addEventListener('click', () => runSiteSearch());
