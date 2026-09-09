@@ -222,6 +222,10 @@ h1, h2, h3, h4 {
 }
 
 .nav-links { display: flex; align-items: center; gap: 2px; flex-wrap: nowrap; white-space: nowrap; }
+/* The CTA/contact/language footer that js/main.js injects into the mobile
+   drawer is only meant for that full-screen view — without this it renders
+   as an extra, oddly-wrapping item in the desktop nav row. */
+.nav-menu-footer { display: none; }
 .nav-links > li { position: relative; }
 .nav-links > li > a, .nav-links > li > button.nav-toggle {
   display: flex;
