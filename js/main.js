@@ -44,22 +44,16 @@ document.addEventListener('DOMContentLoaded', () => {
         <a href="tel:+237676199595"><i class="fa-solid fa-phone"></i> +237 6 76 19 95 95</a>
         <a href="mailto:info@camoncenter.org"><i class="fa-solid fa-envelope"></i> info@camoncenter.org</a>
       </div>
-      <div class="nav-menu-langs">
-        <button type="button" data-lang="en">EN</button>
-        <button type="button" data-lang="fr">FR</button>
-      </div>
+      <div class="nav-menu-langs lang-switch"></div>
     `;
     navLinks.appendChild(footerLi);
 
-    const syncLangButtons = () => {
-      const current = (typeof getCurrentLang === 'function') ? getCurrentLang() : 'en';
-      footerLi.querySelectorAll('[data-lang]').forEach((b) => b.classList.toggle('active', b.dataset.lang === current));
-    };
-    footerLi.querySelectorAll('[data-lang]').forEach((b) => {
-      b.addEventListener('click', () => { if (typeof applyLanguage === 'function') applyLanguage(b.dataset.lang); });
-    });
-    document.addEventListener('coc:language-changed', syncLangButtons);
-    syncLangButtons();
+    // Reuse the same dropdown-building logic as the topbar's switcher
+    // (defined in js/i18n.js, loaded before this file) rather than
+    // duplicating it here.
+    if (typeof buildLanguageSwitcher === 'function') {
+      buildLanguageSwitcher(footerLi.querySelector('.lang-switch'));
+    }
   }
 
   /* ---------- Dropdown menus (click-to-open on touch/mobile, hover on desktop via CSS) ---------- */

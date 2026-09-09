@@ -152,12 +152,21 @@ h1, h2, h3, h4 {
 .topbar-item i { color: var(--gold); width: 14px; text-align: center; }
 .topbar-item strong { color: var(--white); font-weight: 600; }
 .lang-switch { display: flex; gap: 6px; align-items: center; }
-.lang-switch button {
-  color: var(--gray-400);
+/* The topbar switcher sits on the dark navy topbar; the mobile-drawer copy
+   (.nav-menu-langs) sits on a plain white background — same <select>
+   element (built by js/i18n.js's buildLanguageSwitcher), two contexts. */
+.lang-switch .lang-select {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.35);
+  border-radius: var(--radius-sm);
+  color: var(--gray-200);
   font-weight: 700;
-  padding: 2px 4px;
+  font-size: 0.82rem;
+  padding: 3px 6px;
+  cursor: pointer;
 }
-.lang-switch button.active { color: var(--white); text-decoration: underline; text-underline-offset: 3px; }
+.lang-switch .lang-select:hover, .lang-switch .lang-select:focus { color: var(--white); border-color: var(--white); }
+.lang-switch .lang-select option { color: var(--gray-800); background: var(--white); }
 .topbar-search-btn { color: var(--gray-200); font-size: 0.95rem; }
 .topbar-search-btn:hover { color: var(--gold); }
 
@@ -588,6 +597,20 @@ h1, h2, h3, h4 {
   z-index: 400;
 }
 .back-to-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
+
+.lang-toast {
+  position: fixed; left: 50%; bottom: 24px;
+  transform: translate(-50%, 20px);
+  max-width: min(420px, calc(100vw - 32px));
+  background: var(--navy-dark); color: var(--white);
+  padding: 12px 18px; border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  font-size: 0.85rem; text-align: center; line-height: 1.4;
+  opacity: 0; visibility: hidden;
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+  z-index: 900;
+}
+.lang-toast.show { opacity: 1; visibility: visible; transform: translate(-50%, 0); }
 .back-to-top:hover { background: var(--gold); color: var(--navy-dark); }
 
 /* ============ Reveal-on-scroll ============ */
@@ -982,12 +1005,11 @@ img[src*="mosse-bassane"] { object-fit: contain !important; }
   .nav-menu-contact { display: flex; flex-direction: column; gap: 10px; }
   .nav-menu-contact a { display: flex; align-items: center; gap: 10px; font-size: 0.86rem; color: var(--gray-600); }
   .nav-menu-contact a i { color: var(--navy); width: 16px; text-align: center; }
-  .nav-menu-langs { display: flex; gap: 10px; }
-  .nav-menu-langs button {
-    flex: 1; padding: 10px; border-radius: var(--radius-sm);
-    border: 1px solid var(--gray-200); font-weight: 700; color: var(--gray-600);
+  .nav-menu-langs .lang-select {
+    width: 100%; padding: 10px 12px; border-radius: var(--radius-sm);
+    border: 1px solid var(--gray-200); font-weight: 700; color: var(--navy-dark);
+    background: var(--white); font-size: 0.9rem;
   }
-  .nav-menu-langs button.active { background: var(--navy); color: var(--white); border-color: var(--navy); }
 
   /* Lock background scroll while the drawer is open (toggled on <body> by
      js/main.js). */

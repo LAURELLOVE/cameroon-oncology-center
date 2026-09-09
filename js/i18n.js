@@ -2800,8 +2800,40 @@ const translations = {
       benefits_patients: { head: "Avantages pour les Patients", b1: "Accès plus rapide aux soins spécialisés", b2: "Soins plus proches de chez soi", b3: "Réduction des coûts de déplacement", b4: "Continuité des soins", b5: "Meilleurs résultats de traitement" },
       commitment: { head: "Notre Engagement", c1: "Partenariat", c2: "Qualité", c3: "Équité", c4: "Un Cameroun en meilleure santé" }
     }
-  }
+  },
+
+  /* The languages below are wired into the switcher but not yet
+     translated — t() already falls back to English key-by-key for
+     anything missing here, so selecting one of these shows English
+     content (with a one-time toast explaining that) until real
+     translations are filled in. Keeping them as real (empty) objects
+     rather than omitting them is what lets applyLanguage() accept the
+     selection instead of silently forcing it back to English. */
+  es: {}, pt: {}, de: {}, it: {}, ar: {}, zh: {}, ru: {}, sw: {},
+  dua: {}, ewo: {}, ful: {}, bas: {}, bbj: {}
 };
+
+/* Metadata for the language dropdown: code, native display name, and
+   whether real translated content exists yet (drives the "coming soon"
+   toast). Both the desktop topbar and the mobile drawer build their
+   <select> options from this single list. */
+const SUPPORTED_LANGUAGES = [
+  { code: 'en', name: 'English', translated: true },
+  { code: 'fr', name: 'Français', translated: true },
+  { code: 'es', name: 'Español', translated: false },
+  { code: 'pt', name: 'Português', translated: false },
+  { code: 'de', name: 'Deutsch', translated: false },
+  { code: 'it', name: 'Italiano', translated: false },
+  { code: 'ar', name: 'العربية', translated: false },
+  { code: 'zh', name: '中文', translated: false },
+  { code: 'ru', name: 'Русский', translated: false },
+  { code: 'sw', name: 'Kiswahili', translated: false },
+  { code: 'dua', name: 'Duala', translated: false },
+  { code: 'ewo', name: 'Ewondo', translated: false },
+  { code: 'ful', name: 'Fulfulde', translated: false },
+  { code: 'bas', name: 'Bassa', translated: false },
+  { code: 'bbj', name: "Ghomala'", translated: false },
+];
 
 function i18nGet(lang, key) {
   const parts = key.split('.');
@@ -2868,17 +2900,61 @@ function applyLanguage(lang) {
     if (val !== undefined) el.setAttribute('title', val);
   });
 
-  document.querySelectorAll('.lang-switch button').forEach((btn) => {
-    btn.classList.toggle('active', btn.dataset.lang === lang);
+  document.querySelectorAll('select.lang-select').forEach((sel) => {
+    sel.value = lang;
   });
 
   document.dispatchEvent(new CustomEvent('coc:language-changed', { detail: { lang } }));
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  applyLanguage(getCurrentLang());
-
-  document.querySelectorAll('.lang-switch button').forEach((btn) => {
-    btn.addEventListener('click', () => applyLanguage(btn.dataset.lang));
+/* Turns a plain container (the topbar's .lang-switch div, or the mobile
+   drawer's injected language block) into a <select> populated from
+   SUPPORTED_LANGUAGES. Called for every such container on the page, and
+   again by main.js right after it injects the mobile drawer's copy —
+   idempotent via the langBuilt marker so re-running it is harmless. */
+function buildLanguageSwitcher(container) {
+  if (!container || container.dataset.langBuilt) return null;
+  container.dataset.langBuilt = 'true';
+  const select = document.createElement('select');
+  select.className = 'lang-select';
+  select.setAttribute('aria-label', 'Choose language / Choisir la langue');
+  SUPPORTED_LANGUAGES.forEach((l) => {
+    const opt = document.createElement('option');
+    opt.value = l.code;
+    opt.textContent = l.name;
+    select.appendChild(opt);
   });
+  select.value = getCurrentLang();
+  select.addEventListener('change', () => {
+    applyLanguage(select.value);
+    showLanguageToast(select.value);
+  });
+  container.innerHTML = '';
+  container.appendChild(select);
+  return select;
+}
+
+/* One-time heads-up when a visitor picks a language that isn't translated
+   yet, since applyLanguage()'s per-key English fallback would otherwise
+   just silently show English with no explanation. Only fires on an actual
+   user choice (see buildLanguageSwitcher's change handler) — never on the
+   automatic re-apply that runs on every page load. */
+function showLanguageToast(lang) {
+  const meta = SUPPORTED_LANGUAGES.find((l) => l.code === lang);
+  if (!meta || meta.translated) return;
+  let toast = document.querySelector('.lang-toast');
+  if (!toast) {
+    toast = document.createElement('div');
+    toast.className = 'lang-toast';
+    document.body.appendChild(toast);
+  }
+  toast.textContent = `${meta.name}: full translation coming soon — showing available content in English for now.`;
+  toast.classList.add('show');
+  clearTimeout(toast._hideTimer);
+  toast._hideTimer = setTimeout(() => toast.classList.remove('show'), 5000);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.lang-switch').forEach((el) => buildLanguageSwitcher(el));
+  applyLanguage(getCurrentLang());
 });
