@@ -387,6 +387,10 @@ h1, h2, h3, h4 {
   position: absolute; inset: 0;
   width: 100%; height: 100%;
   object-fit: cover;
+  /* Must outrank .ph-label's z-index:1 (and the icon's stacking as a flex
+     item) — otherwise the "Photo placeholder..." caption and icon render
+     as an overlay on top of a real photo instead of being covered by it. */
+  z-index: 2;
 }
 .ph::before {
   content: '';
