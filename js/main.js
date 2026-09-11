@@ -248,4 +248,38 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  /* ---------- Regional reach map pin (about.html) ----------
+     The map image is a square SVG shown with object-fit:contain inside a
+     non-square box, so its rendered size/position shifts with viewport
+     width. The pin's left/top are computed from the image's actual
+     rendered rect (not a fixed CSS percentage) so it stays exactly on
+     Cameroon at any screen size. */
+  const reachMap = document.querySelector('.reach-map');
+  if (reachMap) {
+    const reachImg = reachMap.querySelector('img');
+    const reachPin = reachMap.querySelector('.reach-map-pin');
+    const PAD = 28; // matches the img's inline padding
+    const CAMEROON_X = 0.4683; // Cameroon's centroid within the 600x600 map, 0-1
+    const CAMEROON_Y = 0.4367;
+
+    function positionReachPin() {
+      if (!reachImg.naturalWidth) return;
+      const boxW = reachMap.clientWidth;
+      const boxH = reachMap.clientHeight;
+      const availW = boxW - PAD * 2;
+      const availH = boxH - PAD * 2;
+      const scale = Math.min(availW / reachImg.naturalWidth, availH / reachImg.naturalHeight);
+      const renderW = reachImg.naturalWidth * scale;
+      const renderH = reachImg.naturalHeight * scale;
+      const offsetX = PAD + (availW - renderW) / 2;
+      const offsetY = PAD + (availH - renderH) / 2;
+      reachPin.style.left = `${offsetX + renderW * CAMEROON_X}px`;
+      reachPin.style.top = `${offsetY + renderH * CAMEROON_Y}px`;
+    }
+
+    if (reachImg.complete) positionReachPin();
+    else reachImg.addEventListener('load', positionReachPin);
+    window.addEventListener('resize', positionReachPin);
+  }
+
 });
