@@ -14,25 +14,7 @@
 <body>
 
 <!-- ============ Top bar ============ -->
-<div class="topbar">
-  <div class="container">
-    <div class="topbar-group">
-      <a class="topbar-item" href="tel:+237676199595"><i class="fa-solid fa-phone"></i> +237 6 76 19 95 95</a>
-      <a class="topbar-item" href="mailto:info@camoncenter.org"><i class="fa-solid fa-envelope"></i> info@camoncenter.org</a>
-      <span class="topbar-item"><i class="fa-solid fa-location-dot"></i> <span data-i18n="common.topbar.address">Bekoko - Dibombari, Littoral Region, Cameroon</span></span>
-    </div>
-    <div class="topbar-group">
-      <span class="topbar-item"><i class="fa-solid fa-clock"></i> <strong data-i18n="common.topbar.hours">Open 24 Hours</strong>&nbsp;· <span data-i18n="common.topbar.days">7 Days a Week</span></span>
-      <div class="lang-switch">
-        <button data-lang="en" class="active">EN</button>|<button data-lang="fr">FR</button>
-      </div>
-      <button class="topbar-search-btn" data-open-search data-i18n-title="common.topbar.search_title" title="Search site"><i class="fa-solid fa-magnifying-glass"></i></button>
-    </div>
-  </div>
-</div>
-
-<!-- ============ Main nav ============ -->
-<header class="navbar">
+<div class="topbar header-flyer">
   <div class="container">
     <a href="index.html" class="brand">
       <div class="brand-mark"><img src="images/logo/coc-logo.jpg" alt="Cameroon Oncology Center logo" onerror="this.remove()"><span></span><span></span><span></span><span></span></div>
@@ -41,7 +23,33 @@
         <span class="brand-tag" data-i18n="common.brand.tagline">Hope · Care · Life</span>
       </span>
     </a>
+    <div class="topbar-contact">
+      <div class="topbar-item-group">
+        <a href="tel:+237676199595"><i class="fa-solid fa-phone"></i> +237 6 76 19 95 95</a>
+        <a href="tel:+237696737373"><i class="fa-solid fa-phone"></i> +237 6 96 73 73 73</a>
+      </div>
+      <div class="topbar-item-group">
+        <span><i class="fa-solid fa-location-dot"></i> <span data-i18n="common.topbar.address">Bekoko - Dibombari, Littoral Region, Cameroon</span></span>
+        <span><i class="fa-solid fa-clock"></i> <strong data-i18n="common.topbar.hours">Open 24 Hours</strong>&nbsp;· <span data-i18n="common.topbar.days">7 Days a Week</span></span>
+      </div>
+      <div class="topbar-item-group">
+        <a href="mailto:info@camoncenter.org"><i class="fa-solid fa-envelope"></i> info@camoncenter.org</a>
+        <a href="https://laurellove.github.io/cameroon-oncology-center/" target="_blank" rel="noopener"><i class="fa-solid fa-globe"></i> www.camoncenter.org</a>
+      </div>
+    </div>
+    <div class="topbar-actions">
+      <div class="lang-switch">
+        <button data-lang="en" class="active">EN</button>|<button data-lang="fr">FR</button>
+      </div>
+      <button class="topbar-search-btn" data-open-search data-i18n-title="common.topbar.search_title" title="Search site"><i class="fa-solid fa-magnifying-glass"></i></button>
+      <a href="appointment.html" class="btn btn-primary btn-sm" data-i18n="common.buttons.book_appointment">Book an Appointment</a>
+    </div>
+  </div>
+</div>
 
+<!-- ============ Main nav ============ -->
+<header class="navbar header-flyer">
+  <div class="container">
     <nav>
       <ul class="nav-links">
         <li><a href="index.html" class="router-active" data-i18n="common.nav.home">Home</a></li>
@@ -104,7 +112,6 @@
     </nav>
 
     <div class="nav-cta">
-      <a href="appointment.html" class="btn btn-primary btn-sm" data-i18n="common.buttons.book_appointment">Book an Appointment</a>
       <button class="nav-burger" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </div>
@@ -216,15 +223,15 @@
       <a href="#services" class="btn btn-outline btn-sm"><span data-i18n="home.tech.explore">Explore Our Technology</span> <i class="fa-solid fa-arrow-right"></i></a>
     </div>
     <div class="card-grid reveal">
-      <div class="tech-card">
+      <div class="tech-card tech-overlay">
         <div class="ph"><img src="images/stock/linac-ix.jpg" alt="Varian iX linear accelerator" onerror="this.remove()"><i class="fa-solid fa-atom"></i><span class="ph-label" data-i18n="home.tech.item1_title">Varian iX Linear Accelerator</span></div>
         <div class="tech-card-body"><h3 data-i18n="home.tech.item1_title">Varian iX Linear Accelerator</h3><p data-i18n="home.tech.item1_desc">High-precision radiotherapy for optimal cancer care.</p></div>
       </div>
-      <div class="tech-card">
+      <div class="tech-card tech-overlay">
         <div class="ph tone-gold"><img src="images/stock/linac-trilogy.jpg" alt="Varian Trilogy linear accelerator" onerror="this.remove()"><i class="fa-solid fa-atom"></i><span class="ph-label" data-i18n="home.tech.item2_title">Varian Trilogy Linear Accelerator</span></div>
         <div class="tech-card-body"><h3 data-i18n="home.tech.item2_title">Varian Trilogy Linear Accelerator</h3><p data-i18n="home.tech.item2_desc">Advanced treatment options including 3D-CRT, IMRT and more.</p></div>
       </div>
-      <div class="tech-card">
+      <div class="tech-card tech-overlay">
         <div class="ph tone-light"><img src="images/stock/ct-sim.jpg" alt="Philips Big Bore CT Simulator" onerror="this.remove()"><i class="fa-solid fa-circle-notch"></i><span class="ph-label" data-i18n="home.tech.item3_title">Philips Big Bore CT Simulator</span></div>
         <div class="tech-card-body"><h3 data-i18n="home.tech.item3_title">Philips Big Bore CT Simulator</h3><p data-i18n="home.tech.item3_desc">Advanced imaging for precise treatment planning.</p></div>
       </div>

@@ -317,6 +317,49 @@ h1, h2, h3, h4 {
 .nav-burger.open span:nth-child(2) { opacity: 0; }
 .nav-burger.open span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
 
+/* ============ Flyer-style header (opt-in via .header-flyer) ============
+   Matches the reference flyer designs: a light, taller top row carrying the
+   logo, full contact cluster and actions, sitting above a solid navy row
+   that holds only the nav links. Scoped to .header-flyer so pages still
+   using the classic white-navbar header are unaffected — this is the
+   proof-of-concept for the home page before it rolls out site-wide. */
+.topbar.header-flyer {
+  background: var(--blue-pale);
+  padding: 14px 0;
+}
+.topbar.header-flyer .container {
+  display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;
+  padding-top: 0; padding-bottom: 0;
+}
+.topbar.header-flyer .brand { flex-shrink: 0; }
+.topbar-contact { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+.topbar-item-group { display: flex; flex-direction: column; gap: 3px; font-size: 0.76rem; line-height: 1.3; }
+.topbar-item-group a, .topbar-item-group span { display: flex; align-items: center; gap: 7px; color: var(--gray-800); }
+.topbar-item-group a:hover { color: var(--navy); }
+.topbar-item-group i { color: var(--navy); width: 12px; text-align: center; font-size: 0.78rem; }
+.topbar-actions { display: flex; align-items: center; gap: 16px; }
+.topbar.header-flyer .lang-switch .lang-select { color: var(--navy); border-color: var(--navy); }
+.topbar.header-flyer .lang-switch .lang-select:hover, .topbar.header-flyer .lang-switch .lang-select:focus { color: var(--navy-dark); border-color: var(--navy-dark); }
+.topbar.header-flyer .topbar-search-btn { color: var(--navy); }
+.topbar.header-flyer .topbar-search-btn:hover { color: var(--red); }
+
+.navbar.header-flyer { background: var(--navy-dark); box-shadow: none; }
+.navbar.header-flyer .nav-links > li > a,
+.navbar.header-flyer .nav-links > li > button.nav-toggle { color: rgba(255,255,255,0.82); }
+.navbar.header-flyer .nav-links > li > a:hover,
+.navbar.header-flyer .nav-links > li > button.nav-toggle:hover { color: var(--white); background: rgba(255,255,255,0.12); }
+.navbar.header-flyer .nav-links > li > a.router-active { background: var(--white); color: var(--navy-dark); }
+.navbar.header-flyer .nav-links > li > a.router-active::after { display: none; }
+.navbar.header-flyer .nav-burger span { background: var(--white); }
+.navbar.header-flyer .nav-cta { gap: 0; }
+
+@media (max-width: 1024px) {
+  .topbar-contact { display: none; }
+}
+@media (max-width: 480px) {
+  .topbar.header-flyer .btn-primary { display: none; }
+}
+
 /* Search overlay */
 .search-overlay {
   position: fixed; inset: 0;
@@ -529,6 +572,18 @@ h1, h2, h3, h4 {
 .tech-card-body { padding: 18px 20px; background: var(--white); border: 1px solid var(--gray-200); border-top: none; }
 .tech-card-body h3 { font-size: 1.05rem; margin-bottom: 6px; }
 .tech-card-body p { color: var(--gray-600); font-size: 0.88rem; }
+/* Overlay variant (opt-in via .tech-overlay): title/description sit on the
+   photo itself behind a dark gradient, matching the reference flyer design,
+   instead of in a separate white panel below it. */
+.tech-card.tech-overlay { position: relative; }
+.tech-card.tech-overlay .ph { min-height: 260px; }
+.tech-card.tech-overlay .tech-card-body {
+  position: absolute; left: 0; right: 0; bottom: 0; z-index: 3;
+  background: linear-gradient(to top, rgba(11,42,107,0.94) 0%, rgba(11,42,107,0.7) 65%, transparent 100%);
+  border: none; padding: 30px 18px 16px;
+}
+.tech-card.tech-overlay .tech-card-body h3 { color: var(--white); }
+.tech-card.tech-overlay .tech-card-body p { color: rgba(255,255,255,0.85); }
 
 .value-item { text-align: center; }
 .value-icon {
