@@ -84,11 +84,12 @@ h1, h2, h3, h4 {
 }
 
 .section-title {
+  display: inline-block;
   font-size: 2rem;
   font-weight: 700;
   color: var(--navy-dark);
-  border-left: 5px solid var(--gold);
-  padding-left: 14px;
+  border-bottom: 4px solid var(--gold);
+  padding-bottom: 10px;
 }
 
 .section-head {
@@ -401,6 +402,18 @@ h1, h2, h3, h4 {
 
 /* ============ Hero (home) ============ */
 .hero { background: linear-gradient(180deg, var(--blue-pale) 0%, var(--white) 100%); padding: 56px 0 40px; position: relative; overflow: hidden; }
+/* A wide, soft ambient wash behind the whole right half of the hero,
+   so the photo's glow doesn't read as an isolated halo — the color
+   bleeds across toward the text side, making the two halves feel like
+   one continuous scene instead of "text box + separate photo box". */
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 60% 80% at 78% 50%, rgba(30, 80, 200, 0.16), rgba(226, 35, 26, 0.05) 60%, transparent 75%);
+  pointer-events: none;
+  z-index: 0;
+}
+.hero-grid { position: relative; z-index: 1; }
 .hero-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: 46px; align-items: center; }
 .hero-eyebrow { color: var(--navy); font-weight: 700; letter-spacing: 2px; font-size: 0.8rem; text-transform: uppercase; margin-bottom: 14px; }
 .hero h1 { font-size: 3rem; font-weight: 800; color: var(--navy-dark); }
@@ -569,7 +582,7 @@ h1, h2, h3, h4 {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 .service-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
-.service-card .ph { min-height: 140px; border-radius: 0; }
+.service-card .ph { aspect-ratio: 1 / 1; min-height: 0; border-radius: 0; }
 .service-card-body { padding: 18px 20px 22px; }
 .service-card-body h3 { font-size: 1.05rem; margin-bottom: 8px; }
 .service-card-body p { color: var(--gray-600); font-size: 0.88rem; margin-bottom: 12px; }
