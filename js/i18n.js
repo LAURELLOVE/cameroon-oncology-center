@@ -173,7 +173,7 @@ const translations = {
         badge1_desc: "Patients from all 10 regions have accessed care at COC.",
         badge2_title: "7 Other African Countries",
         badge2_desc: "Chad, Republic of the Congo, DR Congo, Gabon, Equatorial Guinea, Nigeria and the Central African Republic.",
-        map_label: "Map placeholder — regional reach map of Cameroon & Central Africa (images/regional-map.jpg)"
+        map_label: "Regional reach map — Cameroon and Central Africa"
       },
       gallery: {
         g1: "Patient Care", g2: "Radiotherapy", g3: "Surgery", g4: "Laboratory & Diagnostics", g5: "Community Outreach"
@@ -1570,7 +1570,7 @@ const translations = {
         badge1_desc: "Des patients des 10 régions ont accédé aux soins au COC.",
         badge2_title: "7 Autres Pays Africains",
         badge2_desc: "Tchad, République du Congo, RD Congo, Gabon, Guinée Équatoriale, Nigeria et République Centrafricaine.",
-        map_label: "Espace carte — carte de la portée régionale du Cameroun et de l'Afrique Centrale (images/regional-map.jpg)"
+        map_label: "Carte de la portée régionale — Cameroun et Afrique Centrale"
       },
       gallery: {
         g1: "Soins aux Patients", g2: "Radiothérapie", g3: "Chirurgie", g4: "Laboratoire et Diagnostic", g5: "Sensibilisation Communautaire"
