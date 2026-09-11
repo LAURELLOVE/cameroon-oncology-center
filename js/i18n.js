@@ -75,7 +75,7 @@ const translations = {
         italic: "Advanced Care. Compassionate People. A Healthier Tomorrow.",
         desc: "Cameroon Oncology Center is a Ministry of Public Health designated Centre of Excellence in cancer care, providing comprehensive, high-quality, affordable and compassionate oncology services for patients in Cameroon and the region.",
         photo_label: "Photo placeholder — replace with a real photo of the COC facility (images/hero-building.jpg)",
-        tag_html: "Hope<br>Care<br>Life"
+        tag_html: "Hope<br>Care<br><span class=\"tag-accent\">Life</span>"
       },
       stats: {
         consultations_label: "Patient Consultations in 2025",
@@ -1472,7 +1472,7 @@ const translations = {
         italic: "Des Soins Avancés. Des Personnes Compatissantes. Un Avenir en Meilleure Santé.",
         desc: "Cameroon Oncology Center est un Centre d'Excellence en soins du cancer désigné par le Ministère de la Santé Publique, offrant des services d'oncologie complets, de haute qualité, abordables et empreints de compassion aux patients du Cameroun et de la région.",
         photo_label: "Espace photo — remplacez par une photo réelle de l'établissement du COC (images/hero-building.jpg)",
-        tag_html: "Espoir<br>Soin<br>Vie"
+        tag_html: "Espoir<br>Soin<br><span class=\"tag-accent\">Vie</span>"
       },
       stats: {
         consultations_label: "Consultations de Patients en 2025",

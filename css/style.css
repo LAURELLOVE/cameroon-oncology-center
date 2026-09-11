@@ -412,12 +412,19 @@ h1, h2, h3, h4 {
 .hero-tag {
   position: absolute; top: -18px; right: 6%;
   font-family: 'Brush Script MT', cursive, var(--font-head);
-  color: var(--red);
+  color: var(--navy-dark);
   font-size: 1.4rem;
   font-style: italic;
   line-height: 1.15;
   text-align: right;
   transform: rotate(-4deg);
+  z-index: 4;
+}
+.hero-tag .tag-accent { position: relative; color: var(--red); display: inline-block; }
+.hero-tag .tag-accent::after {
+  content: ''; position: absolute; left: 0; right: -4px; bottom: -3px;
+  height: 2.5px; background: var(--red); border-radius: 2px;
+  transform: rotate(-2deg);
 }
 
 /* Placeholder photo blocks (stand-ins for real photography) */
@@ -473,11 +480,11 @@ h1, h2, h3, h4 {
 .ph.ph-hero::after {
   content: '';
   position: absolute;
-  inset: -16px;
+  inset: -28px;
   z-index: -1;
   border-radius: inherit;
-  background: radial-gradient(circle at 60% 40%, rgba(20, 52, 156, 0.35), rgba(226, 35, 26, 0.12) 55%, transparent 75%);
-  filter: blur(24px);
+  background: radial-gradient(circle at 60% 35%, rgba(30, 80, 200, 0.55), rgba(135, 206, 250, 0.3) 45%, rgba(226, 35, 26, 0.18) 70%, transparent 85%);
+  filter: blur(30px);
 }
 /* The negative inset above can bleed past the viewport edge on narrow
    screens where the hero already sits flush against the container padding
@@ -630,7 +637,11 @@ h1, h2, h3, h4 {
   transition: background 0.15s;
 }
 .footer-social a:hover { background: var(--gold); color: var(--navy-dark); }
-.footer-tagline { font-style: italic; color: var(--gray-400); text-align: right; }
+.footer-tagline {
+  font-family: 'Brush Script MT', cursive, var(--font-head);
+  font-style: italic; font-size: 1.15rem;
+  color: var(--red); text-align: right; margin: 0;
+}
 .footer-bottom {
   margin-top: 30px; padding-top: 20px;
   border-top: 1px solid rgba(255,255,255,0.1);
